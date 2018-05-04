@@ -6,7 +6,7 @@
   <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="/css/harmonystyle.css" rel="stylesheet" type="text/css">
   <script src="/scripts/jquery.min.js"></script>
-  <link href="/css/fotorama.css" rel="stylesheet" type="text/css">
+  <link href="/css/fotorama.css" rel="stylesheet">
   <script src="/scripts/fotorama.js"></script>
   <link rel=icon href=/images/favicon.png type="image/png">
   <title>Galería | Harmony Nails</title>
@@ -47,12 +47,13 @@
   <!-- Espacio para separar el texto -->
   <br>
   <!-- Texto de la pagina -->
-  <section class="w2-container container-fluid" id="contrainer_bg" >
+  <section class="w2-container container-fluid" id="contrainer_bg">
     <article>
     	<h2 style="text-align: center;">Galería</h2>
-	    <div class="fotorama" data-allowfullscreen="true" data-width="100%" data-ratio="800/600" data-loop="true" data-keyboard="true">
-		  <img src="http://s.fotorama.io/1.jpg">
-		  <img src="http://s.fotorama.io/2.jpg">
+	    <div class="fotorama" data-allowfullscreen="true" data-width="100%" data-ratio="800/600" data-loop="true" data-keyboard="true" data-nav="thumbs" data-arrows="true">
+		  <img src="/images/imagen1.jpg" data-caption="Texto de ejemplo para la galería de Harmony Nails">
+		  <img src="/images/imagen2.jpg" data-caption="Texto de ejemplo para la la segunda foto de la galería">
+		  <img src="/images/imagen3.jpg" data-caption="Texto de ejemplo para la tercera foto de la galería">
 		</div>
     </article>
   </section>
