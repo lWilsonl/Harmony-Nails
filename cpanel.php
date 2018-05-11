@@ -47,91 +47,131 @@
           </div>          
         </p>
       <!-- Formularios a los que hacen referencia los botones -->
-
       <!-- Formulario de inicio -->
       <div class="collapse" id="Inicio">
         <form action="update_inicio.php" method="POST">
-          <h2>Contenido para el sitio de bienvenida</h2>
           <div class="form-group">
-            <ul class="nav nav-tabs nav-justified" id="TabInicio" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link active" id="Tab-Uno" data-toggle="tab" href="#uno" role="tab" aria-controls="uno" aria-selected="true"><?php $value=1; include ("consultas.php"); $conn = new conexion(); $conn->recuperarDatos($value); ?></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="Tab-Dos" data-toggle="tab" href="#dos" role="tab" aria-controls="dos" aria-selected="false"><?php $value=2; $conn = new conexion(); $conn->recuperarDatos($value); ?></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="Tab-Tres" data-toggle="tab" href="#tres" role="tab" aria-controls="tres" aria-selected="false"><?php $value=3; $conn = new conexion(); $conn->recuperarDatos($value); ?></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="Tab-Cuatro" data-toggle="tab" href="#cuatro" role="tab" aria-controls="cuatro" aria-selected="false"><?php $value=4; $conn = new conexion(); $conn->recuperarDatos($value); ?></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="Tab-Cinco" data-toggle="tab" href="#cinco" role="tab" aria-controls="cinco" aria-selected="false"><?php $value=5; $conn = new conexion(); $conn->recuperarDatos($value); ?></a>
-              </li>
-            </ul>
-            <div class="tab-content" id="myTabContent">
-              <div class="tab-pane fade show active" id="uno" role="tabpanel" aria-labelledby="Tab-Uno">Omaewa mo</div>
-              <div class="tab-pane fade" id="dos" role="tabpanel" aria-labelledby="Tab-Dos">Shindeiru</div>
-              <div class="tab-pane fade" id="tres" role="tabpanel" aria-labelledby="Tab-Tres">Nani?!</div>
-              <div class="tab-pane fade" id="cuatro" role="tabpanel" aria-labelledby="Tab-Cuatro">Nani?!?!</div>
-              <div class="tab-pane fade" id="cinco" role="tabpanel" aria-labelledby="Tab-Cinco">Nani?!?!?!?!</div>
-            </div>
-          </div>
-          <label for="usr">Título:</label>
-          <input type="text" class="form-control" name="TITULO_INICIO" value="<?php 
-                  $value=1;
-                  $conn = new conexion();
-                  $conn->recuperarDatos($value);
-                ?>">
-          <label for="comment">Contenido:</label>
-          <textarea class="form-control" rows="5" name="CONTENIDO_INICIO"><?php $value=1; $cont = new conexion(); $cont->recuperarContenido($value);?>
-          </textarea>
-          <br>
-          <!-- Boton que activa la alerta de confirmacion para guardar -->
-          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#guardarInicio">
-            Guardar cambios
-          </button>
-          <!-- Boton que activa la alerta de confirmacion para limpiar -->
-          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#limpiarInicio">
-            Deshacer cambios
-          </button>
-          <!-- Modal para guardar -->
-          <div class="modal fade" id="guardarInicio" tabindex="-1" role="dialog" aria-labelledby="guardarInicioLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="guardarInicioLabel">Advertencia</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+            <h2>Contenido para el sitio de bienvenida</h2>
+            <div class="form-group">
+              <!-- Contenedor que hace llamadas a las pestañas de navegación -->
+              <ul class="nav nav-tabs nav-justified" id="TabInicio" role="tablist" name="OPCION_I">
+                <li class="nav-item" value="1">
+                  <a class="nav-link active" id="Tab-Uno" data-toggle="tab" href="#uno" role="tab" aria-controls="uno" aria-selected="true"><?php include ("consultas.php"); $conn = new conexion(); $conn->recuperarDatos(1); ?></a>
+                </li>
+                <li class="nav-item" value="2">
+                  <a class="nav-link" id="Tab-Dos" data-toggle="tab" href="#dos" role="tab" aria-controls="dos" aria-selected="false"><?php $conn=new conexion(); $conn->recuperarDatos(2); ?></a>
+                </li>
+                <li class="nav-item" value="3">
+                  <a class="nav-link" id="Tab-Tres" data-toggle="tab" href="#tres" role="tab" aria-controls="tres" aria-selected="false"><?php $conn=new conexion(); $conn->recuperarDatos(3); ?></a>
+                </li>
+                <li class="nav-item" value="4">
+                  <a class="nav-link" id="Tab-Cuatro" data-toggle="tab" href="#cuatro" role="tab" aria-controls="cuatro" aria-selected="false"><?php $conn=new conexion(); $conn->recuperarDatos(4); ?></a>
+                </li>
+                <li class="nav-item" value="5">
+                  <a class="nav-link" id="Tab-Cinco" data-toggle="tab" href="#cinco" role="tab" aria-controls="cinco" aria-selected="false"><?php $conn = new conexion(); $conn->recuperarDatos(5); ?></a>
+                </li>
+              </ul>
+
+              <!-- Contenido de las pestañas de navegación -->
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="uno" role="tabpanel" aria-labelledby="Tab-Uno" value="1">
+                  <label for="usr">Título:</label>
+                  <input type="text" class="form-control" name="TITULO_INICIO" value="<?php 
+                      $conn = new conexion();
+                      $conn->recuperarDatos(1);
+                    ?>">
+                  <label for="comment">Contenido:</label>
+                  <textarea class="form-control" rows="5" name="CONTENIDO_INICIO"><?php $cont=new conexion(); $cont->recuperarContenido(1);?> 
+                  </textarea>
                 </div>
-                <div class="modal-body">
-                  Esta a punto de alterar el contenido de este parrafo, ¿Desea continuar?
+                <div class="tab-pane fade" id="dos" role="tabpanel" aria-labelledby="Tab-Dos">
+                  <label for="usr">Título:</label>
+                  <input type="text" class="form-control" name="TITULO_INICIO" value="<?php 
+                      $conn = new conexion();
+                      $conn->recuperarDatos(2);
+                    ?>">
+                  <label for="comment">Contenido:</label>
+                  <textarea class="form-control" rows="5" name="CONTENIDO_INICIO"><?php $cont=new conexion(); $cont->recuperarContenido(2);?>
+                  </textarea>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                  <input type="submit" class="btn btn-success" name="GUARDAR_INICIO" value="Guardar cambios">
+                <div class="tab-pane fade" id="tres" role="tabpanel" aria-labelledby="Tab-Tres">
+                  <label for="usr">Título:</label>
+                  <input type="text" class="form-control" name="TITULO_INICIO" value="<?php 
+                      $conn = new conexion();
+                      $conn->recuperarDatos(3);
+                    ?>">
+                  <label for="comment">Contenido:</label>
+                  <textarea class="form-control" rows="5" name="CONTENIDO_INICIO"><?php $cont=new conexion(); $cont->recuperarContenido(3);?>
+                  </textarea>
+                </div>
+                <div class="tab-pane fade" id="cuatro" role="tabpanel" aria-labelledby="Tab-Cuatro">
+                  <label for="usr">Título:</label>
+                  <input type="text" class="form-control" name="TITULO_INICIO" value="<?php 
+                      $conn = new conexion();
+                      $conn->recuperarDatos(4);
+                    ?>">
+                  <label for="comment">Contenido:</label>
+                  <textarea class="form-control" rows="5" name="CONTENIDO_INICIO"><?php $cont=new conexion(); $cont->recuperarContenido(4);?>
+                  </textarea>
+                </div>
+                <div class="tab-pane fade" id="cinco" role="tabpanel" aria-labelledby="Tab-Cinco">
+                  <label for="usr">Título:</label>
+                  <input type="text" class="form-control" name="TITULO_INICIO" value="<?php 
+                      $conn = new conexion();
+                      $conn->recuperarDatos(5);
+                    ?>">
+                  <label for="comment">Contenido:</label>
+                  <textarea class="form-control" rows="5" name="CONTENIDO_INICIO"><?php $cont=new conexion(); $cont->recuperarContenido(5);?>
+                  </textarea>
                 </div>
               </div>
             </div>
-          </div>
-          <!-- Modal para vaciar campos -->
-          <div class="modal fade" id="limpiarInicio" tabindex="-1" role="dialog" aria-labelledby="limpiarInicioLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="limpiarInicioLabel">Advertencia</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+            <br>
+            <!-- Boton que activa la alerta de confirmacion para guardar -->
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#guardarInicio">
+              Guardar cambios
+            </button>
+            <!-- Boton que activa la alerta de confirmacion para limpiar -->
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#limpiarInicio">
+              Deshacer cambios
+            </button>
+            <!-- Modal para guardar -->
+            <div class="modal fade" id="guardarInicio" tabindex="-1" role="dialog" aria-labelledby="guardarInicioLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="guardarInicioLabel">Advertencia</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    Esta a punto de alterar el contenido de este parrafo, ¿Desea continuar?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <input type="submit" class="btn btn-success" name="GUARDAR_INICIO" value="Guardar cambios">
+                  </div>
                 </div>
-                <div class="modal-body">
-                  Está a punto de deshacer los ultimos cambios realizados y volver al texto originalmente guardado en la base de datos, ¿Desea continuar?
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                  <input type="reset" class="btn btn-primary" name="limpiar" value="Vaciar campos">
+              </div>
+            </div>
+            <!-- Modal para vaciar campos -->
+            <div class="modal fade" id="limpiarInicio" tabindex="-1" role="dialog" aria-labelledby="limpiarInicioLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="limpiarInicioLabel">Advertencia</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    Está a punto de deshacer los ultimos cambios realizados y volver al texto originalmente guardado en la base de datos, ¿Desea continuar?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <input type="reset" class="btn btn-primary" name="limpiar" value="Vaciar campos">
+                  </div>
                 </div>
               </div>
             </div>
