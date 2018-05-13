@@ -56,72 +56,72 @@
               <!-- Contenedor que hace llamadas a las pestañas de navegación -->
               <ul class="nav nav-tabs nav-justified" id="TabInicio" role="tablist" name="OPCION_I">
                 <li class="nav-item" value="1">
-                  <a class="nav-link active" id="Tab-Uno" data-toggle="tab" href="#uno" role="tab" aria-controls="uno" aria-selected="true"><?php include ("consultas.php"); $conn = new conexion(); $conn->recuperarDatos(1); ?></a>
+                  <a class="nav-link active" id="Tab-Uno" data-toggle="tab" href="#uno" role="tab" aria-controls="uno" aria-selected="true"><?php include ("consultas.php"); $conn = new conexion(); $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=1"); ?></a>
                 </li>
                 <li class="nav-item" value="2">
-                  <a class="nav-link" id="Tab-Dos" data-toggle="tab" href="#dos" role="tab" aria-controls="dos" aria-selected="false"><?php $conn=new conexion(); $conn->recuperarDatos(2); ?></a>
+                  <a class="nav-link" id="Tab-Dos" data-toggle="tab" href="#dos" role="tab" aria-controls="dos" aria-selected="false"><?php $conn=new conexion(); $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=2"); ?></a>
                 </li>
                 <li class="nav-item" value="3">
-                  <a class="nav-link" id="Tab-Tres" data-toggle="tab" href="#tres" role="tab" aria-controls="tres" aria-selected="false"><?php $conn=new conexion(); $conn->recuperarDatos(3); ?></a>
+                  <a class="nav-link" id="Tab-Tres" data-toggle="tab" href="#tres" role="tab" aria-controls="tres" aria-selected="false"><?php $conn=new conexion(); $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=3"); ?></a>
                 </li>
                 <li class="nav-item" value="4">
-                  <a class="nav-link" id="Tab-Cuatro" data-toggle="tab" href="#cuatro" role="tab" aria-controls="cuatro" aria-selected="false"><?php $conn=new conexion(); $conn->recuperarDatos(4); ?></a>
+                  <a class="nav-link" id="Tab-Cuatro" data-toggle="tab" href="#cuatro" role="tab" aria-controls="cuatro" aria-selected="false"><?php $conn=new conexion(); $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=4"); ?></a>
                 </li>
                 <li class="nav-item" value="5">
-                  <a class="nav-link" id="Tab-Cinco" data-toggle="tab" href="#cinco" role="tab" aria-controls="cinco" aria-selected="false"><?php $conn = new conexion(); $conn->recuperarDatos(5); ?></a>
+                  <a class="nav-link" id="Tab-Cinco" data-toggle="tab" href="#cinco" role="tab" aria-controls="cinco" aria-selected="false"><?php $conn = new conexion(); $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=5"); ?></a>
                 </li>
               </ul>
 
               <!-- Contenido de las pestañas de navegación -->
               <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="uno" role="tabpanel" aria-labelledby="Tab-Uno" value="1">
+                <div class="tab-pane fade show active" id="uno" role="tabpanel" aria-labelledby="Tab-Uno">
                   <label for="usr">Título:</label>
                   <input type="text" class="form-control" name="TITULO_INICIO" value="<?php 
                       $conn = new conexion();
-                      $conn->recuperarDatos(1);
+                      $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=1");
                     ?>">
                   <label for="comment">Contenido:</label>
-                  <textarea class="form-control" rows="5" name="CONTENIDO_INICIO"><?php $cont=new conexion(); $cont->recuperarContenido(1);?> 
+                  <textarea class="form-control" rows="5" name="CONTENIDO_INICIO"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=1");?> 
                   </textarea>
                 </div>
                 <div class="tab-pane fade" id="dos" role="tabpanel" aria-labelledby="Tab-Dos">
                   <label for="usr">Título:</label>
                   <input type="text" class="form-control" name="TITULO_INICIO" value="<?php 
                       $conn = new conexion();
-                      $conn->recuperarDatos(2);
+                      $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=2");
                     ?>">
                   <label for="comment">Contenido:</label>
-                  <textarea class="form-control" rows="5" name="CONTENIDO_INICIO"><?php $cont=new conexion(); $cont->recuperarContenido(2);?>
+                  <textarea class="form-control" rows="5" name="CONTENIDO_INICIO"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=2");?>
                   </textarea>
                 </div>
                 <div class="tab-pane fade" id="tres" role="tabpanel" aria-labelledby="Tab-Tres">
                   <label for="usr">Título:</label>
                   <input type="text" class="form-control" name="TITULO_INICIO" value="<?php 
                       $conn = new conexion();
-                      $conn->recuperarDatos(3);
+                      $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=3");
                     ?>">
                   <label for="comment">Contenido:</label>
-                  <textarea class="form-control" rows="5" name="CONTENIDO_INICIO"><?php $cont=new conexion(); $cont->recuperarContenido(3);?>
+                  <textarea class="form-control" rows="5" name="CONTENIDO_INICIO"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=3");?>
                   </textarea>
                 </div>
                 <div class="tab-pane fade" id="cuatro" role="tabpanel" aria-labelledby="Tab-Cuatro">
                   <label for="usr">Título:</label>
                   <input type="text" class="form-control" name="TITULO_INICIO" value="<?php 
                       $conn = new conexion();
-                      $conn->recuperarDatos(4);
+                      $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=4");
                     ?>">
                   <label for="comment">Contenido:</label>
-                  <textarea class="form-control" rows="5" name="CONTENIDO_INICIO"><?php $cont=new conexion(); $cont->recuperarContenido(4);?>
+                  <textarea class="form-control" rows="5" name="CONTENIDO_INICIO"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=4");?>
                   </textarea>
                 </div>
                 <div class="tab-pane fade" id="cinco" role="tabpanel" aria-labelledby="Tab-Cinco">
                   <label for="usr">Título:</label>
                   <input type="text" class="form-control" name="TITULO_INICIO" value="<?php 
                       $conn = new conexion();
-                      $conn->recuperarDatos(5);
+                      $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=5");
                     ?>">
                   <label for="comment">Contenido:</label>
-                  <textarea class="form-control" rows="5" name="CONTENIDO_INICIO"><?php $cont=new conexion(); $cont->recuperarContenido(5);?>
+                  <textarea class="form-control" rows="5" name="CONTENIDO_INICIO"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=5");?>
                   </textarea>
                 </div>
               </div>
@@ -183,106 +183,7 @@
       <div class="dropdown-divider"></div>
 
       <!-- Formulario de servicios -->
-      <div class="collapse" id="Servicios">
-        <form action="update_servicio.php" method="POST">
-          <div class="form-group">
-            <h2>Contenido para el sitio de servicios</h2>
-            <div class="form-group">
-              <label for="SELECTOR_PARRAFO">Parrafo a editar:</label>
-              <select class="custom-select" name="OPCION_S" id="SELECTOR_PARRAFO">
-                <option value="1">                  
-                  <?php 
-                    $value=1;
-                    $conn = new conexion();
-                    $conn->recuperarDatos($value);
-                  ?>
-                </option>
-                <option value="2">
-                  <?php 
-                    $value=2;
-                    $conn = new conexion();
-                    $conn->recuperarDatos($value);
-                  ?>
-                </option>
-                <option value="3">
-                  <?php 
-                    $value=3;
-                    $conn = new conexion();
-                    $conn->recuperarDatos($value);
-                  ?>
-                </option>
-                <option value="4">
-                  <?php 
-                    $value=4;
-                    $conn = new conexion();
-                    $conn->recuperarDatos($value);
-                  ?>
-                </option>
-                <option value="5">
-                  <?php 
-                    $value=5;
-                    $conn = new conexion();
-                    $conn->recuperarDatos($value);
-                  ?>
-                </option>
-              </select>
-            </div>
-            <label for="usr">Título:</label>
-            <input type="text" class="form-control" name="TITULO_SERVICIO">
-            <label for="comment">Contenido:</label>
-            <textarea class="form-control" rows="5" name="CONTENIDO_SERVICIO"></textarea>
-            <br>
-            <!-- Boton que activa la alerta de confirmacion para guardar -->
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#guardarServicio">
-              Guardar cambios
-            </button>
-            <!-- Boton que activa la alerta de confirmacion para limpiar -->
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#limpiarServicio">
-              Deshacer cambios
-            </button>
-            <!-- Modal para guardar -->
-            <div class="modal fade" id="guardarServicio" tabindex="-1" role="dialog" aria-labelledby="guardarServicioLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="guardarServicioLabel">Advertencia</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    Esta a punto de alterar el contenido de este parrafo, ¿Desea continuar?
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <input type="submit" class="btn btn-success" name="GUARDAR_SERVICIO" value="Guardar cambios">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Modal para vaciar campos -->
-            <div class="modal fade" id="limpiarServicio" tabindex="-1" role="dialog" aria-labelledby="limpiarServicioLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="limpiarServicioLabel">Advertencia</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    Está a punto de deshacer los ultimos cambios realizados y volver al texto originalmente guardado en la base de datos, ¿Desea continuar?
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <input type="reset" class="btn btn-primary" name="limpiar" value="Vaciar campos">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
+
 
 
       <br>

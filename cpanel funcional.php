@@ -26,7 +26,7 @@
   <!-- Ventana de administrador dentro de container fluid, contiene los botones -->
   <section class="w2-container container-fluid" id="contrainer_bg" >
     <article>
-      <h2 class="texto_contacto">Conio de la madre</h2>
+      <h2 class="texto_contacto">Panel de control</h2>
         <p>
           <div class="btn-group btn-block">
               <button class="btn btn-primary btn-lg" style="width: 100%" type="button" data-toggle="collapse" data-target="#Inicio" aria-expanded="false" aria-controls="collapseExample">
@@ -54,18 +54,45 @@
           <div class="form-group">
             <h2>Contenido para el sitio de bienvenida</h2>
             <div class="form-group">
-              <label for="SELECTOR_PARRAFO">Parrafo a editar: </label>
+              <label for="SELECTOR_PARRAFO">Parrafo a editar:</label>
               <select class="custom-select" name="OPCION_I" id="SELECTOR_PARRAFO">
-                <?php include ("consultas.php"); $campos="id_cont_inicio, titulo_inicio, contenido_inicio"; $tabla="contenido_inicio"; $conn = new conexion(); $consulta= $conn->recuperarDatos($campos, $tabla); while ($arreglo = mysqli_fetch_assoc($consulta)) { ?>
-                <option value="<?php echo $arreglo['id_cont_inicio']; ?>"><?php echo $arreglo['titulo_inicio']; ?>
+                <option value="1">                  
+                  <?php 
+                    include ("consultas.php");
+                    $conn = new conexion();
+                    $conn->recuperarDatos(1);
+                  ?>
                 </option>
-                <?php } ?>
+                <option value="2">
+                  <?php 
+                    $conn = new conexion();
+                    $conn->recuperarDatos(2);
+                  ?>
+                </option>
+                <option value="3">
+                  <?php 
+                    $conn = new conexion();
+                    $conn->recuperarDatos(3);
+                  ?>
+                </option>
+                <option value="4">
+                  <?php 
+                    $conn = new conexion();
+                    $conn->recuperarDatos(4);
+                  ?>
+                </option>
+                <option value="5">
+                  <?php 
+                    $conn = new conexion();
+                    $conn->recuperarDatos(5);
+                  ?>
+                </option>
               </select>
             </div>
             <label for="usr">Título:</label>
             <input type="text" class="form-control" name="TITULO_INICIO">
             <label for="comment">Contenido:</label>
-            <textarea class="form-control" rows="5" name="CONTENIDO_INICIO"><?php $conn = new conexion(); $consulta= $conn->recuperarDatos($campos, $tabla); while ($arreglo = mysqli_fetch_assoc($consulta)) { ?><?php echo $arreglo["contenido_inicio"]; }?></textarea>
+            <textarea class="form-control" rows="5" name="CONTENIDO_INICIO"><?php $cont = new conexion(); $cont->recuperarContenido(); ?></textarea>
             <br>
             <!-- Boton que activa la alerta de confirmacion para guardar -->
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#guardarInicio">
@@ -118,10 +145,111 @@
           </div>
         </form>
       </div>
+
       <!-- Divisor de modulo - Formulario de Servicios-->
       <div class="dropdown-divider"></div>
 
-      
+      <!-- Formulario de servicios -->
+      <div class="collapse" id="Servicios">
+        <form action="update_servicio.php" method="POST">
+          <div class="form-group">
+            <h2>Contenido para el sitio de servicios</h2>
+            <div class="form-group">
+              <label for="SELECTOR_PARRAFO">Parrafo a editar:</label>
+              <select class="custom-select" name="OPCION_S" id="SELECTOR_PARRAFO">
+                <option value="1">                  
+                  <?php 
+                    $value=1;
+                    $conn = new conexion();
+                    $conn->recuperarDatos($value);
+                  ?>
+                </option>
+                <option value="2">
+                  <?php 
+                    $value=2;
+                    $conn = new conexion();
+                    $conn->recuperarDatos($value);
+                  ?>
+                </option>
+                <option value="3">
+                  <?php 
+                    $value=3;
+                    $conn = new conexion();
+                    $conn->recuperarDatos($value);
+                  ?>
+                </option>
+                <option value="4">
+                  <?php 
+                    $value=4;
+                    $conn = new conexion();
+                    $conn->recuperarDatos($value);
+                  ?>
+                </option>
+                <option value="5">
+                  <?php 
+                    $value=5;
+                    $conn = new conexion();
+                    $conn->recuperarDatos($value);
+                  ?>
+                </option>
+              </select>
+            </div>
+            <label for="usr">Título:</label>
+            <input type="text" class="form-control" name="TITULO_SERVICIO">
+            <label for="comment">Contenido:</label>
+            <textarea class="form-control" rows="5" name="CONTENIDO_SERVICIO"></textarea>
+            <br>
+            <!-- Boton que activa la alerta de confirmacion para guardar -->
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#guardarServicio">
+              Guardar cambios
+            </button>
+            <!-- Boton que activa la alerta de confirmacion para limpiar -->
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#limpiarServicio">
+              Deshacer cambios
+            </button>
+            <!-- Modal para guardar -->
+            <div class="modal fade" id="guardarServicio" tabindex="-1" role="dialog" aria-labelledby="guardarServicioLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="guardarServicioLabel">Advertencia</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    Esta a punto de alterar el contenido de este parrafo, ¿Desea continuar?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <input type="submit" class="btn btn-success" name="GUARDAR_SERVICIO" value="Guardar cambios">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal para vaciar campos -->
+            <div class="modal fade" id="limpiarServicio" tabindex="-1" role="dialog" aria-labelledby="limpiarServicioLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="limpiarServicioLabel">Advertencia</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    Está a punto de deshacer los ultimos cambios realizados y volver al texto originalmente guardado en la base de datos, ¿Desea continuar?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <input type="reset" class="btn btn-primary" name="limpiar" value="Vaciar campos">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
 
 
       <br>
