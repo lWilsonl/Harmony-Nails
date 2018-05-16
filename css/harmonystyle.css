@@ -4,7 +4,7 @@ html {
 }
 
 body{
-  background-color: #FFDCF5;
+  background-color: #F8F9FC;
   margin: 0 0 100px; /* Fondo = altura de footer */
 }
 
@@ -14,12 +14,18 @@ footer {
   bottom: 0;
   height: 40px;
   width: 100%;
-  background-color: #d19bc2;
+  background-color: #F5E1DA;
   text-align: center;
 }
 
 li {
   display: inline;
+}
+
+.w4-container{
+  width: 70%;
+  height: 20%;
+  background-color: #F8F9FC;
 }
 
 .w3-container{
@@ -29,9 +35,15 @@ li {
 
 .w2-container{
   width: 90%;
+  height: 10%;
   border-radius: 10px;
 }
 
+.w1-container{
+  width: 95%;
+  height: 50%;
+  background-color: #FFFFFF;
+}
 
 .carousel-inner > .carousel-item > img {
   width: 80%;
@@ -45,8 +57,8 @@ li {
 }
 
 .nav-item>a:hover {
-  background-color: #c97bb3;
-  border-radius: 10px;
+  background-color: #F5E1DA;
+  border-radius: 2px;
 }
 
 .clear {
@@ -91,9 +103,9 @@ h1, h2{
   text-align: center;
 }
 
-.active{
-  background-color: #c97bb3;
-  border-radius: 10px;
+.activo{
+  background-color: #F5E1DA;
+  border-radius: 2px;
 }
 
 /* Estilos para los formularios */
@@ -161,7 +173,7 @@ div>ul>a{
   z-index: 99; /* Asegura que no se sobreponga */
   border: none; /* Remueve los bordes */
   outline: none; /* Remueve el contorno */
-  background-color: #d19bc2; /* Establece un color de fondo */
+  background-color: #ae596d; /* Establece un color de fondo */
   color: white; /* Color de texto */
   cursor: pointer; /* Agrega un apuntador de mouse en la propiedad hover */
   padding: 15px; /* Agrega padding */
@@ -170,9 +182,23 @@ div>ul>a{
 }
 
 #myBtn:hover {
-  background-color: #d19bc9; /* Color que se muestra en la propiedad Hover */
+  background-color: #891631; /* Color que se muestra en la propiedad Hover */
 }
 
 #contrainer_bg{
-  background-color: #d19bc2;
+  background-color: #F5E1DA;
+}
+
+.simplescrollup__button {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  transition: 1s all;
+  z-index: 10000;
+}
+.simplescrollup__button--show {
+  transform: translateX(0);
+}
+.simplescrollup__button--hide {
+  transform: translateX(100px);
 }

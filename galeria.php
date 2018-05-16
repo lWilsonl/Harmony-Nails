@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,7 +30,7 @@
 						<li class="nav-item">
 							<a class="nav-link" href="servicios.php">Servicios</a>
 						</li>
-						<li class="nav-item active">
+						<li class="nav-item activo">
 							<a class="nav-link" href="galeria.php">Galería</a>
 						</li>
 						<li class="nav-item">
@@ -50,7 +50,7 @@
   <section class="w2-container container-fluid" id="contrainer_bg">
     <article>
     	<h2 style="text-align: center;">Galería</h2>
-	    <div class="fotorama" data-allowfullscreen="true" data-width="100%" data-ratio="800/600" data-loop="true" data-keyboard="true" data-nav="thumbs" data-arrows="true">
+	    <div class="fotorama centrar" data-allowfullscreen="true" data-width="100%" data-ratio="1366/768" data-loop="true" data-keyboard="true" data-nav="thumbs" data-arrows="true">
 		  <img src="/images/imagen1.jpg" data-caption="Texto de ejemplo para la galería de Harmony Nails">
 		  <img src="/images/imagen2.jpg" data-caption="Texto de ejemplo para la la segunda foto de la galería">
 		  <img src="/images/imagen3.jpg" data-caption="Texto de ejemplo para la tercera foto de la galería">

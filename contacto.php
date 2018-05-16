@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -32,7 +32,7 @@
 						<li class="nav-item">
 							<a class="nav-link" href="citas.php">Citas</a>
 						</li>
-						<li class="nav-item active">
+						<li class="nav-item activo">
 							<a class="nav-link" href="contacto.php">Contacto</a>
 						</li>
 					</ul>

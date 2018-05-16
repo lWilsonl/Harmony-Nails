@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="/css/harmonystyle.css" rel="stylesheet" type="text/css">
+  <link href="/dist/summernote-bs4.css" rel="stylesheet" type="text/css">
   <link rel=icon href=/images/favicon.png type="image/png">
   <title>Panel de control | Harmony Nails</title>
 </head>
@@ -52,9 +53,10 @@
         <form action="update_inicio.php" method="POST">
           <div class="form-group">
             <h2>Contenido para el sitio de bienvenida</h2>
-            <div class="form-group">
+            <div class="w1-container container-fluid form-group">
               <!-- Contenedor que hace llamadas a las pestañas de navegación -->
-              <ul class="nav nav-tabs nav-justified" id="TabInicio" role="tablist" name="OPCION_I">
+              <br>
+              <ul class="nav nav-pills nav-justified" id="TabInicio" role="tablist" name="Tab_Inicio">
                 <li class="nav-item" value="1">
                   <a class="nav-link active" id="Tab-Uno" data-toggle="tab" href="#uno" role="tab" aria-controls="uno" aria-selected="true"><?php include ("consultas.php"); $conn = new conexion(); $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=1"); ?></a>
                 </li>
@@ -76,52 +78,51 @@
               <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="uno" role="tabpanel" aria-labelledby="Tab-Uno">
                   <label for="usr">Título:</label>
-                  <input type="text" class="form-control" name="TITULO_INICIO" value="<?php 
+                  <input type="text" class="form-control" name="Titulo_uno" value="<?php 
                       $conn = new conexion();
                       $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=1");
                     ?>">
                   <label for="comment">Contenido:</label>
-                  <textarea class="form-control" rows="5" name="CONTENIDO_INICIO"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=1");?> 
-                  </textarea>
+                  <textarea class="form-control summernote" rows="5" name="Contenido_uno"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=1");?></textarea>
                 </div>
                 <div class="tab-pane fade" id="dos" role="tabpanel" aria-labelledby="Tab-Dos">
                   <label for="usr">Título:</label>
-                  <input type="text" class="form-control" name="TITULO_INICIO" value="<?php 
+                  <input type="text" class="form-control" name="Titulo_dos" value="<?php 
                       $conn = new conexion();
                       $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=2");
                     ?>">
                   <label for="comment">Contenido:</label>
-                  <textarea class="form-control" rows="5" name="CONTENIDO_INICIO"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=2");?>
+                  <textarea class="form-control summernote" rows="5" name="Contenido_dos"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=2");?>
                   </textarea>
                 </div>
                 <div class="tab-pane fade" id="tres" role="tabpanel" aria-labelledby="Tab-Tres">
                   <label for="usr">Título:</label>
-                  <input type="text" class="form-control" name="TITULO_INICIO" value="<?php 
+                  <input type="text" class="form-control" name="Titulo_tres" value="<?php 
                       $conn = new conexion();
                       $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=3");
                     ?>">
                   <label for="comment">Contenido:</label>
-                  <textarea class="form-control" rows="5" name="CONTENIDO_INICIO"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=3");?>
+                  <textarea class="form-control summernote" rows="5" name="Contenido_tres"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=3");?>
                   </textarea>
                 </div>
                 <div class="tab-pane fade" id="cuatro" role="tabpanel" aria-labelledby="Tab-Cuatro">
                   <label for="usr">Título:</label>
-                  <input type="text" class="form-control" name="TITULO_INICIO" value="<?php 
+                  <input type="text" class="form-control" name="Titulo_cuatro" value="<?php 
                       $conn = new conexion();
                       $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=4");
                     ?>">
                   <label for="comment">Contenido:</label>
-                  <textarea class="form-control" rows="5" name="CONTENIDO_INICIO"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=4");?>
+                  <textarea class="form-control summernote" rows="5" name="Contenido_cuatro"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=4");?>
                   </textarea>
                 </div>
                 <div class="tab-pane fade" id="cinco" role="tabpanel" aria-labelledby="Tab-Cinco">
                   <label for="usr">Título:</label>
-                  <input type="text" class="form-control" name="TITULO_INICIO" value="<?php 
+                  <input type="text" class="form-control" name="Titulo_cinco" value="<?php 
                       $conn = new conexion();
                       $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=5");
                     ?>">
                   <label for="comment">Contenido:</label>
-                  <textarea class="form-control" rows="5" name="CONTENIDO_INICIO"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=5");?>
+                  <textarea class="form-control summernote" rows="5" name="Contenido_cinco"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=5");?>
                   </textarea>
                 </div>
               </div>
@@ -130,10 +131,6 @@
             <!-- Boton que activa la alerta de confirmacion para guardar -->
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#guardarInicio">
               Guardar cambios
-            </button>
-            <!-- Boton que activa la alerta de confirmacion para limpiar -->
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#limpiarInicio">
-              Deshacer cambios
             </button>
             <!-- Modal para guardar -->
             <div class="modal fade" id="guardarInicio" tabindex="-1" role="dialog" aria-labelledby="guardarInicioLabel" aria-hidden="true">
@@ -150,27 +147,7 @@
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <input type="submit" class="btn btn-success" name="GUARDAR_INICIO" value="Guardar cambios">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Modal para vaciar campos -->
-            <div class="modal fade" id="limpiarInicio" tabindex="-1" role="dialog" aria-labelledby="limpiarInicioLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="limpiarInicioLabel">Advertencia</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    Está a punto de deshacer los ultimos cambios realizados y volver al texto originalmente guardado en la base de datos, ¿Desea continuar?
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <input type="reset" class="btn btn-primary" name="limpiar" value="Vaciar campos">
+                    <input type="submit" class="btn btn-success" name="Guardar_uno" value="Guardar cambios">
                   </div>
                 </div>
               </div>
@@ -199,5 +176,34 @@
 	<script src="/scripts/popper.min.js"></script>
 	<script src="/scripts/bootstrap.min.js"></script>
 	<script src="/scripts/Boton_Volver.js"></script>
+  <script type="/scripts/jquery.js"></script>
+  <script src="/dist/summernote-bs4.js"></script>
+  <script src="/dist/lang/summernote-es-ES.js"></script>
+  <!-- Editor de texto de summer note -->
+  <script>
+  $('.summernote').summernote({
+    placeholder: 'Introduzca su informacion aqui',
+    tabsize: 2,
+    height: 200,
+    disableDragAndDrop: true,
+    toolbar: [
+    // [groupName, [list of button]]
+    ['style', ['bold', 'italic', 'underline', 'clear']],
+    ['font', ['strikethrough', 'superscript', 'subscript']],
+    ['fontsize', ['fontsize']],
+    ['color', ['color']],
+    ['para', ['ul', 'ol', 'paragraph']],
+    ['height', ['height']],
+    ['undo-redo', ['undo', 'redo']],
+    ],
+    lang: "es-ES",
+    fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18', '24', '36']
+  });
+  $(document).ready(function() {
+    $('#summernote').summernote({
+    lang:'es-ES',
+    });
+  });
+  </script>
 </body>
 </html>

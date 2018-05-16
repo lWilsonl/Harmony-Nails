@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,7 +10,8 @@
 </head>
 <body>
 	<!-- Boton para volver al principio del sitio -->
-	<button onclick="topFunction()" id="myBtn" title="Ir arriba">Volver</button>
+	<!-- <button onclick="topFunction()" id="myBtn" title="Ir arriba">Volver</button> -->
+  <a href="#up" duraction="1000" height-hide="100" easing="easeInOutQuad" class="simplescrollup__button simplescrollup__button--hide">Your text</a>
 	<!-- Barra de contenido tipo Nav dentro de header -->
 	<header class="container-fluid">
 		<div class="navbar-header-fluid">
@@ -93,21 +94,27 @@
     <article>
       <div class="container-fluid">
         <button type="button" class="btn btn-primary centrar" data-toggle="collapse" data-target="#VerMas">Ver más</button>
-        <div id="VerMas" class="collapse">
-          <h2><?php $value=1; include ("consultas.php"); $conn = new conexion(); $conn->recuperarDatos($value); ?></h2>
-          <p class="p"><?php $value=1; $conn = new conexion(); $conn->recuperarContenido($value); ?></p>
-
-          <h2><?php $value=2; $conn = new conexion(); $conn->recuperarDatos($value); ?></h2>
-            <p class="p"><?php $value=2; $conn = new conexion(); $conn->recuperarContenido($value); ?></p>
-
-          <h2><?php $value=3; $conn = new conexion(); $conn->recuperarDatos($value); ?></h2>
-            <p class="p"><?php $value=3; $conn = new conexion(); $conn->recuperarContenido($value); ?></p>
-
-          <h2><?php $value=4; $conn = new conexion(); $conn->recuperarDatos($value); ?></h2>
-            <p class="p"><?php $value=4; $conn = new conexion(); $conn->recuperarContenido($value); ?></p>
-
-          <h2><?php $value=5; $conn = new conexion(); $conn->recuperarDatos($value); ?></h2>
-            <p class="p"><?php $value=5; $conn = new conexion(); $conn->recuperarContenido($value); ?>Holowo</p>
+        <div id="VerMas" class="collapse w4-container container-fluid">
+          <!-- Este es un ejemplo de la utilizacion de la funcion general de selects para traer los titulos de esta sección -->
+          <h2><?php include ("consultas.php"); $conn = new conexion(); $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=1"); ?></h2>
+          <!-- Este es un ejemplo de la utilizacion de la funcion general de selects para traer el contenido de los parrafos de esta sección-->
+          <p class="p"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=1"); ?></p>
+          <!-- Separador  -->
+          <div class="dropdown-divider"></div>
+          <h2><?php $conn = new conexion(); $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=2"); ?></h2>
+            <p class="p"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=2"); ?></p>
+          <!-- Separador  -->
+          <div class="dropdown-divider"></div>
+          <h2><?php $conn = new conexion(); $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=3"); ?></h2>
+            <p class="p"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=3"); ?></p>
+          <!-- Separador  -->
+          <div class="dropdown-divider"></div>
+          <h2><?php $conn = new conexion(); $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=4"); ?></h2>
+            <p class="p"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=4"); ?></p>
+          <!-- Separador  -->
+          <div class="dropdown-divider"></div>
+          <h2><?php $conn = new conexion(); $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=5"); ?></h2>
+            <p class="p"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=5"); ?></p>
         </div>
       </div>
     </article>
@@ -121,6 +128,6 @@
   <script>window.jQuery || document.write('<script src="/scripts/jquery-slim.min.js"><\/script>')</script>
   <script src="/scripts/popper.min.js"></script>
   <script src="/scripts/bootstrap.min.js"></script>
-  <script src="/scripts/Boton_Volver.js"></script>
+  <script src="/scripts/simplescrollup.js"></script>
 </body>
 </html>
