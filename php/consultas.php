@@ -1,14 +1,10 @@
 <?php
+    require "./php/dbconnect.php";
     class conexion{
         // Funcion encargada de realizar los selects generales, basandose en un dato especifico, la tabla y la condición
         function recuperarDatos($dato, $tabla, $condicion){
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "harmonynails";
-
-            // Create connection
-            $conexion = mysqli_connect($servername, $username, $password, $dbname) or die ("Error en la conexión");
+            $clase = new connect();
+            $conexion=$clase->conectardb();
             // Verificar conexion
             if (!$conexion) {
                 die("Fallo la conexion a la base de datos" . mysqli_connect_error());

@@ -1,10 +1,7 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "harmonynails";
-    // Crear conexion
-    $conexion= mysqli_connect($servername, $username, $password, $dbname) or die ("Error en la conexión");
+    require "dbconnect.php";
+    $clase = new connect();
+    $conexion=$clase->conectardb();
     // Verificar conexion
     if (!$conexion) {
         die("Fallo la conexion a la base de datos" . mysqli_connect_error());
@@ -26,5 +23,5 @@
 
     //Antes de redireccionar al cpanel, cierra la conexion abierta
     mysqli_close($conexion);
-    header("Location: cpanel.php");
+    header("Location: ../cpanel.php");
 ?>

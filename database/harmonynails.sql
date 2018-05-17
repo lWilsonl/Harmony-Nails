@@ -2,7 +2,7 @@
 -- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
+-- Servidor: localhost:3306
 -- Tiempo de generación: 11-05-2018 a las 03:37:40
 -- Versión del servidor: 10.1.31-MariaDB
 -- Versión de PHP: 7.2.4
@@ -20,8 +20,8 @@ SET time_zone = "+00:00";
 
 --
 -- Base de datos: `harmonynails`
-CREATE DATABASE harmonynails;
-use harmonynails;
+CREATE DATABASE IF NOT EXISTS harmonyn_db;
+use harmonyn_db;
 --
 
 -- --------------------------------------------------------

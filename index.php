@@ -3,20 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
   <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="/css/harmonystyle.css" rel="stylesheet" type="text/css">
   <link rel=icon href=/images/favicon.png type="image/png">
   <title>Inicio | Harmony Nails</title>
 </head>
 <body>
-	<!-- Boton para volver al principio del sitio -->
-	<!-- <button onclick="topFunction()" id="myBtn" title="Ir arriba">Volver</button> -->
-  <a href="#up" duraction="1000" height-hide="100" easing="easeInOutQuad" class="simplescrollup__button simplescrollup__button--hide">Your text</a>
-	<!-- Barra de contenido tipo Nav dentro de header -->
+	
+  <!-- Boton para volver al principio del sitio -->
+  <a href="#up" duraction="1000" height-hide="100" easing="easeInOutQuad" class="simplescrollup__button simplescrollup__button--hide" style="color: #ffffff">Ir arriba</a>
+	
+  <!-- Barra de contenido tipo Nav dentro de header -->
 	<header class="container-fluid">
 		<div class="navbar-header-fluid">
 			<nav class="navbar navbar-expand-md navbar-light rounded navbar-static-top" role="navigation">
-				<a class="navbar-brand" href="index.php" style="font-family: Freestyle Script;">
+				<a class="navbar-brand" href="index.php" style="font-family: Dancing Script;">
 					<img src="/images/logo.svg" alt="Harmony Nails"/>
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,9 +43,13 @@
 				</div>
 			</nav>
 		</div>
+  <!-- Separador para separar el header del objeto carousel -->
+  <div class="dropdown-divider"></div>
 	</header>
-  <!-- Espacio para separar el header del objeto carousel -->
+  
+  <!-- Espacio para separar el nav del carousel -->
   <br>
+  
   <!-- Objeto carousel dentro de un container-fluid -->
   <div class="w3-container container-fluid">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -85,10 +91,10 @@
       </a>
     </div>
   </div>
+  
   <!-- Separador  -->
   <div class="dropdown-divider"></div>
-  <!-- Espacio para separar el carousel del texto -->
-  <br>
+  
   <!-- Texto de la pagina -->
   <section>
     <article>
@@ -96,7 +102,7 @@
         <button type="button" class="btn btn-primary centrar" data-toggle="collapse" data-target="#VerMas">Ver más</button>
         <div id="VerMas" class="collapse w4-container container-fluid">
           <!-- Este es un ejemplo de la utilizacion de la funcion general de selects para traer los titulos de esta sección -->
-          <h2><?php include ("consultas.php"); $conn = new conexion(); $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=1"); ?></h2>
+          <h2><?php include ("./php/consultas.php"); $conn = new conexion(); $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=1"); ?></h2>
           <!-- Este es un ejemplo de la utilizacion de la funcion general de selects para traer el contenido de los parrafos de esta sección-->
           <p class="p"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=1"); ?></p>
           <!-- Separador  -->
@@ -119,10 +125,12 @@
       </div>
     </article>
   </section>
+  
   <!-- Sección de pie de pagina -->
   <footer>
     <p class="mb-3 text-muted">&copy; Harmony Nails - 2018</p>
   </footer>
+  
   <!-- Librerias y scripts Javascript -->
   <script src="/scripts/jquery-3.2.1.slim.min.js"></script>
   <script>window.jQuery || document.write('<script src="/scripts/jquery-slim.min.js"><\/script>')</script>

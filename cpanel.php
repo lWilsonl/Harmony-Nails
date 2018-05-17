@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
   <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="/css/harmonystyle.css" rel="stylesheet" type="text/css">
   <link href="/dist/summernote-bs4.css" rel="stylesheet" type="text/css">
@@ -10,9 +11,11 @@
   <title>Panel de control | Harmony Nails</title>
 </head>
 <body>
-	<!-- Boton para volver al principio del sitio -->
-	<button onclick="topFunction()" id="myBtn" title="Ir arriba">Volver</button>
-	<!-- Barra de contenido tipo Nav dentro de header -->
+  
+  <!-- Boton para volver al principio del sitio -->
+  <a href="#up" duraction="1000" height-hide="100" easing="easeInOutQuad" class="simplescrollup__button simplescrollup__button--hide" style="color: #ffffff">Ir arriba</a>
+	
+  <!-- Barra de contenido tipo Nav dentro de header -->
 	<header class="container-fluid">
 		<div class="navbar-header-fluid">
 			<nav class="navbar navbar-expand-md navbar-light  rounded navbar-static-top" role="navigation">
@@ -22,8 +25,10 @@
 			</nav>
 		</div>
 	</header>
+  
   <!-- Espacio para separar el header del panel de control -->
   <br>
+  
   <!-- Ventana de administrador dentro de container fluid, contiene los botones -->
   <section class="w2-container container-fluid" id="contrainer_bg" >
     <article>
@@ -47,18 +52,21 @@
               </button>
           </div>          
         </p>
+      
       <!-- Formularios a los que hacen referencia los botones -->
+      
       <!-- Formulario de inicio -->
       <div class="collapse" id="Inicio">
-        <form action="update_inicio.php" method="POST">
+        <form action="./php/update_inicio.php" method="POST">
           <div class="form-group">
-            <h2>Contenido para el sitio de bienvenida</h2>
             <div class="w1-container container-fluid form-group">
+              <h2>Contenido para el sitio de bienvenida</h2>
+              
               <!-- Contenedor que hace llamadas a las pestañas de navegación -->
               <br>
               <ul class="nav nav-pills nav-justified" id="TabInicio" role="tablist" name="Tab_Inicio">
                 <li class="nav-item" value="1">
-                  <a class="nav-link active" id="Tab-Uno" data-toggle="tab" href="#uno" role="tab" aria-controls="uno" aria-selected="true"><?php include ("consultas.php"); $conn = new conexion(); $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=1"); ?></a>
+                  <a class="nav-link active colorpill" id="Tab-Uno" data-toggle="tab" href="#uno" role="tab" aria-controls="uno" aria-selected="true"><?php include ("./php/consultas.php"); $conn = new conexion(); $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=1"); ?></a>
                 </li>
                 <li class="nav-item" value="2">
                   <a class="nav-link" id="Tab-Dos" data-toggle="tab" href="#dos" role="tab" aria-controls="dos" aria-selected="false"><?php $conn=new conexion(); $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=2"); ?></a>
@@ -126,32 +134,35 @@
                   </textarea>
                 </div>
               </div>
-            </div>
-            <br>
-            <!-- Boton que activa la alerta de confirmacion para guardar -->
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#guardarInicio">
-              Guardar cambios
-            </button>
-            <!-- Modal para guardar -->
-            <div class="modal fade" id="guardarInicio" tabindex="-1" role="dialog" aria-labelledby="guardarInicioLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="guardarInicioLabel">Advertencia</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    Esta a punto de alterar el contenido de este parrafo, ¿Desea continuar?
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <input type="submit" class="btn btn-success" name="Guardar_uno" value="Guardar cambios">
+              <br>
+              
+              <!-- Boton que activa la alerta de confirmacion para guardar -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#guardarInicio">Guardar cambios</button>
+              
+              <!-- Modal para guardar -->
+              <div class="modal fade" id="guardarInicio" tabindex="-1" role="dialog" aria-labelledby="guardarInicioLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="guardarInicioLabel">Advertencia</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      Esta a punto de alterar el contenido de este parrafo, ¿Desea continuar?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                      <input type="submit" class="btn btn-primary" name="Guardar_uno" value="Guardar cambios">
+                    </div>
                   </div>
                 </div>
               </div>
+              <br>
+              <br>
             </div>
+            <br>
           </div>
         </form>
       </div>
@@ -160,7 +171,7 @@
       <div class="dropdown-divider"></div>
 
       <!-- Formulario de servicios -->
-
+      
 
 
       <br>
@@ -175,7 +186,7 @@
 	<script>window.jQuery || document.write('<script src="/scripts/jquery-slim.min.js"><\/script>')</script>
 	<script src="/scripts/popper.min.js"></script>
 	<script src="/scripts/bootstrap.min.js"></script>
-	<script src="/scripts/Boton_Volver.js"></script>
+  <script src="/scripts/simplescrollup.js"></script>
   <script type="/scripts/jquery.js"></script>
   <script src="/dist/summernote-bs4.js"></script>
   <script src="/dist/lang/summernote-es-ES.js"></script>

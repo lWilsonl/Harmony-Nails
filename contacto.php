@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
   <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="/css/harmonystyle.css" rel="stylesheet" type="text/css">
   <link rel=icon href=/images/favicon.png type="image/png">
@@ -10,7 +11,7 @@
 </head>
 <body>
 	<!-- Boton para volver al principio del sitio -->
-	<button onclick="topFunction()" id="myBtn" title="Ir arriba">Volver</button>
+  	<a href="#up" duraction="1000" height-hide="100" easing="easeInOutQuad" class="simplescrollup__button simplescrollup__button--hide" style="color: #ffffff">Ir arriba</a>
 	<!-- Barra de contenido tipo Nav dentro de header -->
 	<header class="container-fluid">
 		<div class="navbar-header-fluid">
@@ -39,6 +40,8 @@
 				</div>
 			</nav>
 		</div>
+  <!-- Separador para separar el header del objeto carousel -->
+  <div class="dropdown-divider"></div>
   </header>
   <!-- Espacio para separar el texto -->
   <br>
@@ -60,6 +63,7 @@
       <iframe class="container-fluid"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d871.3577107571032!2d-110.99425027082702!3d29.122479998889204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ce86b5c0e24559%3A0xb1d983d91c5ec08d!2sNu%C3%B1o+de+Guzm%C3%A1n+672%2C+Progresista%2C+83120+Hermosillo%2C+Son.!5e0!3m2!1ses-419!2smx!4v1520818218553" width="1200" height="480" frameborder="0" style="border:0" allowfullscreen></iframe>
       <!-- Ubicación de google maps  -->
       <br>
+      <br>
     </article>
   </section>
   <!-- Sección de pie de pagina -->
@@ -71,6 +75,6 @@
 	<script>window.jQuery || document.write('<script src="/scripts/jquery-slim.min.js"><\/script>')</script>
 	<script src="/scripts/popper.min.js"></script>
 	<script src="/scripts/bootstrap.min.js"></script>
-	<script src="/scripts/Boton_Volver.js"></script>
+	<script src="/scripts/simplescrollup.js"></script>
 </body>
 </html>

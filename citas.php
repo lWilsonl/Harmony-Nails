@@ -10,7 +10,7 @@
 </head>
 <body>
 	<!-- Boton para volver al principio del sitio -->
-	<button onclick="topFunction()" id="myBtn" title="Ir arriba">Volver</button>
+  	<a href="#up" duraction="1000" height-hide="100" easing="easeInOutQuad" class="simplescrollup__button simplescrollup__button--hide" style="color: #ffffff">Ir arriba</a>
 	<!-- Barra de contenido tipo Nav dentro de header -->
 	<header class="container-fluid">
 		<div class="navbar-header-fluid">
@@ -40,6 +40,8 @@
 				</div>
 			</nav>
 		</div>
+  	<!-- Separador para separar el header del objeto carousel -->
+  	<div class="dropdown-divider"></div>
 	</header>
   <!-- Espacio para separar el texto -->
   <br>
@@ -60,6 +62,6 @@
 	<script>window.jQuery || document.write('<script src="/scripts/jquery-slim.min.js"><\/script>')</script>
 	<script src="/scripts/popper.min.js"></script>
 	<script src="/scripts/bootstrap.min.js"></script>
-	<script src="/scripts/Boton_Volver.js"></script>
+	<script src="/scripts/simplescrollup.js"></script>
 </body>
 </html>

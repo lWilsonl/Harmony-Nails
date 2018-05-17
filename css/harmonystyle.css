@@ -14,7 +14,6 @@ footer {
   bottom: 0;
   height: 40px;
   width: 100%;
-  background-color: #F5E1DA;
   text-align: center;
 }
 
@@ -43,6 +42,7 @@ li {
   width: 95%;
   height: 50%;
   background-color: #FFFFFF;
+  border-radius: 10px;
 }
 
 .carousel-inner > .carousel-item > img {
@@ -56,9 +56,10 @@ li {
   font-weight: bold;
 }
 
-.nav-item>a:hover {
-  background-color: #F5E1DA;
+.nav-item>a:hover, .activo {
+  background-color: #ae596d;
   border-radius: 2px;
+  color: #ffffff;
 }
 
 .clear {
@@ -66,7 +67,7 @@ li {
 }
 
 h1, h2{
-  font-family: Freestyle Script;
+  font-family: 'Dancing Script', cursive;
   color: #891631;
   font-size: 80px;
 }
@@ -103,11 +104,47 @@ h1, h2{
   text-align: center;
 }
 
-.activo{
-  background-color: #F5E1DA;
-  border-radius: 2px;
+/*Estilos para el nav-pill del area de cpanel*/
+.nav-pills>li>a:hover {
+  color: #ffffff;
+  background-color:#ae596d;
 }
 
+.nav-pills>li>a {
+  color: #891631;
+}
+
+.nav-pills > li > a.active{
+  color: #ffffff !important;
+  background-color:#891631 !important;
+}
+
+/* Estilos para el boton de volver arriba*/
+.simplescrollup__button {
+  position: fixed;  /* Posicionamiento fixed/sticky*/
+  transition: 1s all; /* Transicion para que el boton aparezca en pantalla*/
+  bottom: 20px; /* Coloca el boton en el fondo de la pagina */
+  right: 30px; /* Coloca el boton a 30px de la derecha */
+  z-index: 99; /* Asegura que no se sobreponga */
+  border: none; /* Remueve los bordes */
+  outline: none; /* Remueve el contorno */
+  background-color: #ae596d; /* Establece un color de fondo */
+  color: white; /* Color de texto */
+  cursor: pointer; /* Agrega un apuntador de mouse en la propiedad hover */
+  padding: 15px; /* Agrega padding */
+  border-radius: 100px; /* Establece las esquinas redondeadas */
+  font-size: 18px; /* Aumenta el tamaño de la fuente */
+}
+.simplescrollup__button--show {
+  transform: translateX(0);
+}
+.simplescrollup__button--hide {
+  transform: translateX(130px);
+}
+
+.simplescrollup__button:hover {
+  background-color: #891631; /* Color que se muestra en la propiedad Hover del boton */
+}
 /* Estilos para los formularios */
 
 .form-signin {
@@ -133,72 +170,26 @@ h1, h2{
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
-}
-.form-signin input[type="email"]: {
   border: 3px solid #555;
 }
+
 .form-signin input[type="password"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   hover-color: lime;
 }
-.btn-primary{
+.btn-primary, .btn-primary:hover, .btn-primary:focus{
   background-color: #891631;
-  border-color: #891631
-}
-
-.btn-primary:hover{
-  background-color: #891631;
-  border-color: #891631
-}
-
-.btn-primary:focus{
-  background-color: #891631;
-  border-color: #891631
+  border-color: #ffffff;
 }
 
 div>ul>a{
   font-size: 2vh;
   font-size: 2vw;
 }
-
 /* Id's utilizadas para distintas tareas */
 
-#myBtn {
-  display: none; /* Escondido por defecto */
-  position: fixed; /* Posicion fixed/sticky */
-  bottom: 20px; /* Coloca el boton en el fondo de la pagina */
-  right: 30px; /* Coloca el boton a 30px de la derecha */
-  z-index: 99; /* Asegura que no se sobreponga */
-  border: none; /* Remueve los bordes */
-  outline: none; /* Remueve el contorno */
-  background-color: #ae596d; /* Establece un color de fondo */
-  color: white; /* Color de texto */
-  cursor: pointer; /* Agrega un apuntador de mouse en la propiedad hover */
-  padding: 15px; /* Agrega padding */
-  border-radius: 100px; /* Establece las esquinas redondeadas */
-  font-size: 18px; /* Aumenta el tamaño de la fuente */
-}
-
-#myBtn:hover {
-  background-color: #891631; /* Color que se muestra en la propiedad Hover */
-}
-
 #contrainer_bg{
-  background-color: #F5E1DA;
-}
-
-.simplescrollup__button {
-  position: fixed;
-  bottom: 3rem;
-  right: 3rem;
-  transition: 1s all;
-  z-index: 10000;
-}
-.simplescrollup__button--show {
-  transform: translateX(0);
-}
-.simplescrollup__button--hide {
-  transform: translateX(100px);
+  background-color: #e2e5ec;
 }
