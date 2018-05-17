@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
   <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="/css/harmonystyle.css" rel="stylesheet" type="text/css">
   <link rel=icon href=/images/favicon.png type="image/png">
@@ -15,7 +16,7 @@
 	<header class="container-fluid">
 		<div class="navbar-header-fluid">
 			<nav class="navbar navbar-expand-md navbar-light  rounded navbar-static-top">
-				<a class="navbar-brand" href="index.php" style="font-family: Freestyle Script;">
+				<a class="navbar-brand" href="index.php" style="font-family: Dancing Script;">
 					<img src="/images/logo.svg" alt="Harmony Nails"/>
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">

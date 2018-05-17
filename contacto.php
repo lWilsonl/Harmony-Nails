@@ -16,7 +16,7 @@
 	<header class="container-fluid">
 		<div class="navbar-header-fluid">
 			<nav class="navbar navbar-expand-md navbar-light  rounded navbar-static-top">
-				<a class="navbar-brand" href="index.php" style="font-family: Freestyle Script;">
+				<a class="navbar-brand" href="index.php" style="font-family: Dancing Script;">
 					<img src="/images/logo.svg" alt="Harmony Nails"/>
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
