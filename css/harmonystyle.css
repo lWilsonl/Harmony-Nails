@@ -69,7 +69,7 @@ li {
 h1, h2{
   font-family: 'Dancing Script', cursive;
   color: #891631;
-  font-size: 80px;
+  font-size:5vw;
 }
 
 .sombra {
@@ -80,6 +80,7 @@ h1, h2{
 
 .p{
   font-size: 20px;
+  font-size:1vw;
   text-align: justify;
 }
 
@@ -89,8 +90,10 @@ h1, h2{
 }
 
 .logos_redes{
-  width: 50px;
-  height: 50px;
+  width: 100%;
+  max-width: 20px !important;
+  max-height: 20px !important;
+  height: auto;
 }
 
 .centrar {
@@ -100,7 +103,7 @@ h1, h2{
   width: 50%;
 }
 
-.texto_contacto{
+.centrar_texto{
   text-align: center;
 }
 
@@ -123,17 +126,17 @@ h1, h2{
 .simplescrollup__button {
   position: fixed;  /* Posicionamiento fixed/sticky*/
   transition: 1s all; /* Transicion para que el boton aparezca en pantalla*/
-  bottom: 20px; /* Coloca el boton en el fondo de la pagina */
-  right: 30px; /* Coloca el boton a 30px de la derecha */
+  bottom: 10px; /* Coloca el boton en el fondo de la pagina */
+  right: 10px; /* Coloca el boton a 30px de la derecha */
   z-index: 99; /* Asegura que no se sobreponga */
   border: none; /* Remueve los bordes */
   outline: none; /* Remueve el contorno */
   background-color: #ae596d; /* Establece un color de fondo */
   color: white; /* Color de texto */
   cursor: pointer; /* Agrega un apuntador de mouse en la propiedad hover */
-  padding: 15px; /* Agrega padding */
+  padding: 7px; /* Agrega padding*/
   border-radius: 100px; /* Establece las esquinas redondeadas */
-  font-size: 18px; /* Aumenta el tamaño de la fuente */
+  font-size: 1vw; /* Ajusta el tamaño de la fuente */
 }
 .simplescrollup__button--show {
   transform: translateX(0);

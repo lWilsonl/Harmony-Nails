@@ -13,7 +13,7 @@
 <body>
   
   <!-- Boton para volver al principio del sitio -->
-  <a href="#up" duraction="1000" height-hide="100" easing="easeInOutQuad" class="simplescrollup__button simplescrollup__button--hide" style="color: #ffffff">Ir arriba</a>
+  <a href="#up" duraction="1000" height-hide="100" easing="easeInOutQuad" class="simplescrollup__button simplescrollup__button--hide w3-mobile" style="color: #ffffff">Ir arriba</a>
 	
   <!-- Barra de contenido tipo Nav dentro de header -->
 	<header class="container-fluid">
@@ -32,22 +32,22 @@
   <!-- Ventana de administrador dentro de container fluid, contiene los botones -->
   <section class="w2-container container-fluid" id="contrainer_bg" >
     <article>
-      <h2 class="texto_contacto">Panel de control</h2>
+      <h2 class="centrar_texto">Panel de control</h2>
         <p>
-          <div class="btn-group btn-block">
-              <button class="btn btn-primary btn-lg" style="width: 100%" type="button" data-toggle="collapse" data-target="#Inicio" aria-expanded="false" aria-controls="collapseExample">
+          <div class="btn-group btn-block w3-mobile">
+              <button class="btn btn-primary btn-lg w3-mobile" style="width: 100%" type="button" data-toggle="collapse" data-target="#Inicio" aria-expanded="false" aria-controls="collapseExample">
               Inicio
               </button>
-              <button class="btn btn-primary btn-lg" style="width: 100%" type="button" data-toggle="collapse" data-target="#Servicios" aria-expanded="false" aria-controls="collapseExample">
+              <button class="btn btn-primary btn-lg w3-mobile" style="width: 100%" type="button" data-toggle="collapse" data-target="#Servicios" aria-expanded="false" aria-controls="collapseExample">
               Servicios
               </button>
-              <button class="btn btn-primary btn-lg" style="width: 100%" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+              <button class="btn btn-primary btn-lg w3-mobile" style="width: 100%" type="button" data-toggle="collapse" data-target="#Galeria" aria-expanded="false" aria-controls="collapseExample">
               Galería
               </button>
-              <button class="btn btn-primary btn-lg" style="width: 100%" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+              <button class="btn btn-primary btn-lg w3-mobile" style="width: 100%" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
               Citas
               </button>
-              <button class="btn btn-primary btn-lg" style="width: 100%" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+              <button class="btn btn-primary btn-lg w3-mobile" style="width: 100%" type="button" data-toggle="collapse" data-target="#Contacto" aria-expanded="false" aria-controls="collapseExample">
               Contacto
               </button>
           </div>          
@@ -66,18 +66,18 @@
               <br>
               <ul class="nav nav-pills nav-justified" id="TabInicio" role="tablist" name="Tab_Inicio">
                 <li class="nav-item" value="1">
-                  <a class="nav-link active colorpill" id="Tab-Uno" data-toggle="tab" href="#uno" role="tab" aria-controls="uno" aria-selected="true"><?php include ("./php/consultas.php"); $conn = new conexion(); $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=1"); ?></a>
+                  <a class="nav-link active colorpill w3-mobile" id="Tab-Uno" data-toggle="tab" href="#uno" role="tab" aria-controls="uno" aria-selected="true"><?php include ("./php/consultas.php"); $conn = new conexion(); $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=1"); ?></a>
                 </li>
-                <li class="nav-item" value="2">
+                <li class="nav-item w3-mobile" value="2">
                   <a class="nav-link" id="Tab-Dos" data-toggle="tab" href="#dos" role="tab" aria-controls="dos" aria-selected="false"><?php $conn=new conexion(); $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=2"); ?></a>
                 </li>
-                <li class="nav-item" value="3">
+                <li class="nav-item w3-mobile" value="3">
                   <a class="nav-link" id="Tab-Tres" data-toggle="tab" href="#tres" role="tab" aria-controls="tres" aria-selected="false"><?php $conn=new conexion(); $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=3"); ?></a>
                 </li>
-                <li class="nav-item" value="4">
+                <li class="nav-item w3-mobile" value="4">
                   <a class="nav-link" id="Tab-Cuatro" data-toggle="tab" href="#cuatro" role="tab" aria-controls="cuatro" aria-selected="false"><?php $conn=new conexion(); $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=4"); ?></a>
                 </li>
-                <li class="nav-item" value="5">
+                <li class="nav-item w3-mobile" value="5">
                   <a class="nav-link" id="Tab-Cinco" data-toggle="tab" href="#cinco" role="tab" aria-controls="cinco" aria-selected="false"><?php $conn = new conexion(); $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=5"); ?></a>
                 </li>
               </ul>
@@ -162,16 +162,84 @@
               <br>
               <br>
             </div>
-            <br>
           </div>
         </form>
       </div>
 
-      <!-- Divisor de modulo - Formulario de Servicios-->
+      <!-- Divisor de modulo - Formulario de Galería-->
       <div class="dropdown-divider"></div>
 
-      <!-- Formulario de servicios -->
-      
+      <!-- Formulario de galería -->
+      <div class="collapse" id="Galeria">
+        <form action="./php/subir_galeria.php" method="POST">
+          <div class="form-group">
+            <br>
+            <div class="w1-container container-fluid form-group">
+              <h2>Imágenes de la galería</h2>
+              
+              <!-- Contenedor que hace llamadas a las pestañas de navegación -->
+              <br>
+              <ul class="nav nav-pills nav-justified" id="TabInicio" role="tablist" name="Tab_Subir">
+                <li class="nav-item" value="1">
+                  <a class="nav-link active w3-mobile" id="Gal-uno" data-toggle="tab" href="#G-uno" role="tab" aria-controls="G-uno" aria-selected="true">Subir imágenes</a>
+                </li>
+                <li class="nav-item w3-mobile" value="2">
+                  <a class="nav-link" id="Gal-Dos" data-toggle="tab" href="#G-dos" role="tab" aria-controls="G-dos" aria-selected="false">Editar imágenes</a>
+                </li>
+                <li class="nav-item w3-mobile" value="3">
+                  <a class="nav-link" id="Gal-Tres" data-toggle="tab" href="#G-tres" role="tab" aria-controls="G-tres" aria-selected="false">Eliminar imágenes</a>
+                </li>
+              </ul>
+
+              <!-- Contenido de las pestañas de navegación -->
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="G-uno" role="tabpanel" aria-labelledby="Gal-Uno">
+                <div class="mb-3 col-md-4">
+                  <div>
+                    <label>Seleccione Imagen</label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1" accept=".png, .jpg, .jpeg, .PNG, .JPEG, .JPG" multiple="true" name="valor_imagen[]" required>
+                    <small class="form-text text-muted">
+                          Por favor solo utilice los formatos: .png, .jpg o .jpeg.
+                    </small>
+                  </div>
+                </div>
+                </div>
+                <div class="tab-pane fade" id="G-dos" role="tabpanel" aria-labelledby="Gal-Dos">
+                </div>
+                <div class="tab-pane fade" id="G-tres" role="tabpanel" aria-labelledby="Gal-Tres">
+                </div>
+              </div>
+              <br>
+              
+              <!-- Boton que activa la alerta de confirmacion para guardar -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#guardarGaleria">Guardar cambios</button>
+              
+              <!-- Modal para guardar -->
+              <div class="modal fade" id="guardarGaleria" tabindex="-1" role="dialog" aria-labelledby="guardarGaleriaLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="guardarGaleriaLabel">Advertencia</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      Esta a punto de subir esta imagen al servidor, ¿Desea continuar?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                      <input type="submit" class="btn btn-primary" name="Guardar_uno" value="Guardar cambios">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <br>
+            </div>
+          </div>
+        </form>
+      </div>
 
 
       <br>

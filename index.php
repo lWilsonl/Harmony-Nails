@@ -98,7 +98,7 @@
   <!-- Texto de la pagina -->
   <section>
     <article>
-      <div class="container-fluid">
+      <div class="container-fluid w3-mobile">
         <button type="button" class="btn btn-primary centrar" data-toggle="collapse" data-target="#VerMas">Ver más</button>
         <div id="VerMas" class="collapse w4-container container-fluid">
           <!-- Este es un ejemplo de la utilizacion de la funcion general de selects para traer los titulos de esta sección -->

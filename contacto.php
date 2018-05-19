@@ -48,13 +48,12 @@
   <!-- Texto de la pagina -->
   <section class="w2-container container-fluid" id="contrainer_bg" >
     <article>
-      <h2 class="texto_contacto">¡Ponte en contacto!</h2>
+      <h2 class="centrar_texto">¡Ponte en contacto!</h2>
       <img src="/images/logo.svg" class="centrar" alt="Harmony Nails">
       <p class="p2">
-        <img src="/images/faceb_logo.svg" class="logos_redes" alt="fb"> <a href="https://www.facebook.com/Harmony-Nails-264255900645210/?ti=as" target="_blank">Sitio oficial de Facebook</a>
-        <img src="/images/insta_logo.svg" class="logos_redes" alt="instagram"> <a href="https://www.instagram.com/fernandasoto79251/" target="_blank">Cuenta oficial de Instagram</a>
-        <img src="/images/wp_logo.svg" class="logos_redes" alt="whatsapp"> 662 328 1593
-      </p>
+        <img src="/images/faceb_logo.svg" class="logos_redes" alt="fb"> <a href="https://www.facebook.com/Harmony-Nails-264255900645210/?ti=as" target="_blank" style="font-size: 1vw;">Sitio oficial de Facebook</a>
+        <img src="/images/insta_logo.svg" class="logos_redes" alt="instagram"> <a href="https://www.instagram.com/fernandasoto79251/" target="_blank" style="font-size: 1vw;">Cuenta oficial de Instagram</a>
+        <img src="/images/wp_logo.svg" class="logos_redes" alt="whatsapp" style="font-size: 1vw;"> 662 328 1593</p>
       <!-- Separador  -->
       <div class="dropdown-divider"></div>
       <!-- Espacio para serparar elementos  -->
