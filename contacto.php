@@ -17,7 +17,10 @@
 		<div class="navbar-header-fluid">
 			<nav class="navbar navbar-expand-md navbar-light  rounded navbar-static-top">
 				<a class="navbar-brand" href="index.php" style="font-family: Dancing Script;">
-					<img src="/images/logo.svg" alt="Harmony Nails"/>
+					<picture>
+            			<source media="(min-width: 1000px)" srcset="/images/logo.svg">
+            			<img src="/images/logo-png.png" alt="Harmony Nails">
+          			</picture>
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -49,11 +52,16 @@
   <section class="w2-container container-fluid" id="contrainer_bg" >
     <article>
       <h2 class="centrar_texto">¡Ponte en contacto!</h2>
-      <img src="/images/logo.svg" class="centrar" alt="Harmony Nails">
+      <br>
+	  <picture>
+      	<source media="(min-width: 1000px)" class="centrar" srcset="/images/logo.svg">
+        <img src="/images/logo-png.png" class="centrar" alt="Harmony Nails">
+      </picture>
+      <br>
       <p class="p2">
-        <img src="/images/faceb_logo.svg" class="logos_redes" alt="fb"> <a href="https://www.facebook.com/Harmony-Nails-264255900645210/?ti=as" target="_blank" style="font-size: 1vw;">Sitio oficial de Facebook</a>
-        <img src="/images/insta_logo.svg" class="logos_redes" alt="instagram"> <a href="https://www.instagram.com/fernandasoto79251/" target="_blank" style="font-size: 1vw;">Cuenta oficial de Instagram</a>
-        <img src="/images/wp_logo.svg" class="logos_redes" alt="whatsapp" style="font-size: 1vw;"> 662 328 1593</p>
+        <a href="https://www.facebook.com/Harmony-Nails-264255900645210/?ti=as" target="_blank"><img src="/images/faceb_logo.svg" class="logos_redes" alt="fb"></a>
+        <a href="https://www.instagram.com/fernandasoto79251/" target="_blank"><img src="/images/insta_logo.svg" class="logos_redes" alt="instagram"></a>
+        <a href="#" data-toggle="popover" data-trigger="focus" title="WhatsApp de Harmony Nails" data-placement="top" data-content="662 328 1593"><img src="/images/wp_logo.svg" class="logos_redes" alt="WhatsApp"></a></p>
       <!-- Separador  -->
       <div class="dropdown-divider"></div>
       <!-- Espacio para serparar elementos  -->
@@ -75,5 +83,10 @@
 	<script src="/scripts/popper.min.js"></script>
 	<script src="/scripts/bootstrap.min.js"></script>
 	<script src="/scripts/simplescrollup.js"></script>
+	<script>
+		$(document).ready(function(){
+    	$('[data-toggle="popover"]').popover();   
+		});
+	</script>
 </body>
 </html>

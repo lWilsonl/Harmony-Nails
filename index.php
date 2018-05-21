@@ -19,7 +19,10 @@
 		<div class="navbar-header-fluid">
 			<nav class="navbar navbar-expand-md navbar-light rounded navbar-static-top" role="navigation">
 				<a class="navbar-brand" href="index.php" style="font-family: Dancing Script;">
-					<img src="/images/logo.svg" alt="Harmony Nails"/>
+					<picture>
+            <source media="(min-width: 1000px)" srcset="/images/logo.svg">
+            <img src="/images/logo-png.png" alt="Harmony Nails">
+          </picture>
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -99,8 +102,10 @@
   <section>
     <article>
       <div class="container-fluid w3-mobile">
+        <!-- Boton que se encarga de desplegar el texto de la pagina. "Ver más" -->
         <button type="button" class="btn btn-primary centrar" data-toggle="collapse" data-target="#VerMas">Ver más</button>
         <div id="VerMas" class="collapse w4-container container-fluid">
+          <br>
           <!-- Este es un ejemplo de la utilizacion de la funcion general de selects para traer los titulos de esta sección -->
           <h2><?php include ("./php/consultas.php"); $conn = new conexion(); $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=1"); ?></h2>
           <!-- Este es un ejemplo de la utilizacion de la funcion general de selects para traer el contenido de los parrafos de esta sección-->

@@ -32,7 +32,10 @@
 		<div class="navbar-header-fluid">
 			<nav class="navbar navbar-expand-md navbar-light  rounded navbar-static-top">
 				<a class="navbar-brand" href="index.php" style="font-family: Dancing Script;">
-					<img src="/images/logo.svg" alt="Harmony Nails"/>
+					<picture>
+            			<source media="(min-width: 1000px)" srcset="/images/logo.svg">
+            			<img src="/images/logo-png.png" alt="Harmony Nails">
+          			</picture>
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>

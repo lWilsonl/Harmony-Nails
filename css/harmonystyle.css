@@ -91,8 +91,8 @@ h1, h2{
 
 .logos_redes{
   width: 100%;
-  max-width: 20px !important;
-  max-height: 20px !important;
+  max-width: 50px !important;
+  max-height: 50px !important;
   height: auto;
 }
 
@@ -136,7 +136,7 @@ h1, h2{
   cursor: pointer; /* Agrega un apuntador de mouse en la propiedad hover */
   padding: 7px; /* Agrega padding*/
   border-radius: 100px; /* Establece las esquinas redondeadas */
-  font-size: 1vw; /* Ajusta el tamaño de la fuente */
+  font-size: 1.5vw; /* Ajusta el tamaño de la fuente */
 }
 .simplescrollup__button--show {
   transform: translateX(0);

@@ -20,7 +20,10 @@
 		<div class="navbar-header-fluid">
 			<nav class="navbar navbar-expand-md navbar-light  rounded navbar-static-top" role="navigation">
 				<a class="navbar-brand" href="index.php" style="font-family: Dancing Script;, text-align: center;" target="_blank">
-					<img src="/images/logo.svg" alt="Harmony Nails"/>
+          <picture>
+            <source media="(min-width: 1000px)" srcset="/images/logo.svg">
+            <img src="/images/logo-png.png" alt="Harmony Nails">
+          </picture>
 				</a>
 			</nav>
 		</div>
