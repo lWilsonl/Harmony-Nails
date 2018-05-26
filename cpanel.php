@@ -13,7 +13,7 @@
 <body>
   
   <!-- Boton para volver al principio del sitio -->
-  <a href="#up" duraction="1000" height-hide="100" easing="easeInOutQuad" class="simplescrollup__button simplescrollup__button--hide w3-mobile" style="color: #ffffff">Ir arriba</a>
+  <a href="#up" duraction="1000" height-hide="100" easing="easeInOutQuad" class="simplescrollup__button simplescrollup__button--hide w3-mobile" style="color: #ffffff"><img src="/images/arrow.png" style="width: 6vh; height: 6vh;"></a>
 	
   <!-- Barra de contenido tipo Nav dentro de header -->
 	<header class="container-fluid">
@@ -174,7 +174,7 @@
 
       <!-- Formulario de galería -->
       <div class="collapse" id="Galeria">
-        <form action="./php/subir_galeria.php" method="POST">
+        <form action="./php/subir_galeria.php" method="POST" enctype="multipart/form-data">
           <div class="form-group">
             <br>
             <div class="w1-container container-fluid form-group">
@@ -187,10 +187,7 @@
                   <a class="nav-link active w3-mobile" id="Gal-uno" data-toggle="tab" href="#G-uno" role="tab" aria-controls="G-uno" aria-selected="true">Subir imágenes</a>
                 </li>
                 <li class="nav-item w3-mobile" value="2">
-                  <a class="nav-link" id="Gal-Dos" data-toggle="tab" href="#G-dos" role="tab" aria-controls="G-dos" aria-selected="false">Editar imágenes</a>
-                </li>
-                <li class="nav-item w3-mobile" value="3">
-                  <a class="nav-link" id="Gal-Tres" data-toggle="tab" href="#G-tres" role="tab" aria-controls="G-tres" aria-selected="false">Eliminar imágenes</a>
+                  <a class="nav-link" id="Gal-Dos" data-toggle="tab" href="#G-dos" role="tab" aria-controls="G-dos" aria-selected="false">Eliminar imágenes</a>
                 </li>
               </ul>
 
@@ -199,17 +196,16 @@
                 <div class="tab-pane fade show active" id="G-uno" role="tabpanel" aria-labelledby="Gal-Uno">
                 <div class="mb-3 col-md-4">
                   <div>
+                    <br>
                     <label>Seleccione Imagen</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1" accept=".png, .jpg, .jpeg, .PNG, .JPEG, .JPG" multiple="true" name="valor_imagen[]" required>
+                    <input type="file" class="form-control-file" name="exa_imagen" id="exampleFormControlFile1" accept=".png, .jpg, .jpeg, .PNG, .JPEG, .JPG" multiple="true" value="gallery" required>
                     <small class="form-text text-muted">
-                          Por favor solo utilice los formatos: .png, .jpg o .jpeg.
+                          Formato de archivos admitidos: .png, .jpg o .jpeg
                     </small>
                   </div>
                 </div>
                 </div>
                 <div class="tab-pane fade" id="G-dos" role="tabpanel" aria-labelledby="Gal-Dos">
-                </div>
-                <div class="tab-pane fade" id="G-tres" role="tabpanel" aria-labelledby="Gal-Tres">
                 </div>
               </div>
               <br>

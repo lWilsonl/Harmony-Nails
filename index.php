@@ -12,7 +12,7 @@
 <body>
 	
   <!-- Boton para volver al principio del sitio -->
-  <a href="#up" duraction="1000" height-hide="100" easing="easeInOutQuad" class="simplescrollup__button simplescrollup__button--hide" style="color: #ffffff">Ir arriba</a>
+  <a href="#up" duraction="1000" height-hide="100" easing="easeInOutQuad" class="simplescrollup__button simplescrollup__button--hide" style="color: #ffffff"><img src="/images/arrow.png" style="width: 6vh; height: 6vh;"></a>
 	
   <!-- Barra de contenido tipo Nav dentro de header -->
 	<header class="container-fluid">

@@ -1,17 +1,3 @@
-<?php
-	function recuperarImagenes(){
-		$directorio = opendir("./images/gallery");
-		$n = 0;
-		$img = array();
-		while ($archivo = readdir($directorio)) {
-			$img[$n] = "<img src='/images/gallery/$archivo' ";
-			if ($n >=1) {
-				echo ($img[$n])."<br>";
-			}	
-			$n++;
-		}	
-	}	
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -26,7 +12,7 @@
 </head>
 <body>
 	<!-- Boton para volver al principio del sitio -->
-  	<a href="#up" duraction="1000" height-hide="100" easing="easeInOutQuad" class="simplescrollup__button simplescrollup__button--hide" style="color: #ffffff">Ir arriba</a>
+  	<a href="#up" duraction="1000" height-hide="100" easing="easeInOutQuad" class="simplescrollup__button simplescrollup__button--hide" style="color: #ffffff"><img src="/images/arrow.png" style="width: 6vh; height: 6vh;"></a>
 	<!-- Barra de contenido tipo Nav dentro de header -->
 	<header class="container-fluid">
 		<div class="navbar-header-fluid">
@@ -68,7 +54,7 @@
   <section class="w2-container container-fluid" id="contrainer_bg">
     <article>
     	<h2 style="text-align: center;">Galería</h2>
-	    <div class="fotorama centrar" data-allowfullscreen="true" data-width="100%" data-ratio="1366/768" data-loop="true" data-keyboard="true" data-nav="thumbs" data-arrows="true"><?php recuperarImagenes();?></div>
+	    <div class="fotorama centrar" data-allowfullscreen="true" data-width="100%" data-ratio="1366/768" data-loop="true" data-keyboard="true" data-nav="thumbs" data-arrows="true"><?php include ("./php/traer_galeria.php"); recuperarImagenes("gallery");?></div>
     </article>
     <br>
   </section>
