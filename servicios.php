@@ -6,6 +6,7 @@
   <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
   <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="/css/harmonystyle.css" rel="stylesheet" type="text/css">
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
   <link rel=icon href=/images/favicon.png type="image/png">
   <title>Servicios | Harmony Nails</title>
 </head>
@@ -50,11 +51,16 @@
   <!-- Espacio para separar el texto -->
   <br>
   <!-- Texto de la pagina -->
-  <section>
+  <section class="w2-container container-fluid" id="contrainer_bg">
     <article>
-      <div class="container-fluid">
-        <h2 style="text-align: center;">¡Próximamente!</h2>
-      </div>
+	    <!-- Galeria para la aplicacion -->
+    	<h2 style="text-align: center;">Aplicación</h2>
+	    <div class="fotorama centrar" data-allowfullscreen="true" data-width="100%" data-ratio="1366/768" data-loop="true" data-keyboard="true" data-nav="thumbs" data-arrows="true"><?php include ("./php/traer_galeria.php"); recuperarImagenes("curso");?></div>
+  		<!-- separador para separar los servicios -->
+  		<div class="dropdown-divider"></div>
+  		<!-- Galeria para los cursos  -->
+    	<h2 style="text-align: center;">Cursos</h2>
+	    <div class="fotorama centrar" data-allowfullscreen="true" data-width="100%" data-ratio="1366/768" data-loop="true" data-keyboard="true" data-nav="thumbs" data-arrows="true"><?php recuperarImagenes("aplicacion");?></div>
     </article>
   </section>
   <!-- Sección de pie de pagina -->
@@ -67,5 +73,7 @@
 	<script src="/scripts/popper.min.js"></script>
 	<script src="/scripts/bootstrap.min.js"></script>
   	<script src="/scripts/simplescrollup.js"></script>
+  	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 </body>
 </html>

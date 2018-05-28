@@ -174,7 +174,7 @@
 
       <!-- Formulario de galería -->
       <div class="collapse" id="Galeria">
-        <form action="./php/subir_galeria.php" method="POST" enctype="multipart/form-data">
+        <form action="./php/subir_imagenes.php" method="POST" enctype="multipart/form-data">
           <div class="form-group">
             <br>
             <div class="w1-container container-fluid form-group">
@@ -197,7 +197,11 @@
                 <div class="mb-3 col-md-4">
                   <div>
                     <br>
-                    <label>Seleccione Imagen</label>
+                    <label>Introduzca un nombre para la imagen:</label>
+                    <input type="text" class="form-control" name="Titulo_imagen">
+                    <input type="hidden" name="carpeta" value="gallery/">
+                    <br>
+                    <label>Seleccione Imagen:</label>
                     <input type="file" class="form-control-file" name="exa_imagen" id="exampleFormControlFile1" accept=".png, .jpg, .jpeg, .PNG, .JPEG, .JPG" multiple="true" value="gallery" required>
                     <small class="form-text text-muted">
                           Formato de archivos admitidos: .png, .jpg o .jpeg
