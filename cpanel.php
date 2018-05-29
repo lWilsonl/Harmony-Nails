@@ -88,54 +88,53 @@
               <!-- Contenido de las pestañas de navegación -->
               <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="uno" role="tabpanel" aria-labelledby="Tab-Uno">
-                  <label for="usr">Título:</label>
+                  <label for="usr">* Título:</label>
                   <input type="text" class="form-control" name="Titulo_uno" value="<?php 
                       $conn = new conexion();
                       $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=1");
-                    ?>">
-                  <label for="comment">Contenido:</label>
-                  <textarea class="form-control summernote" rows="5" name="Contenido_uno"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=1");?></textarea>
+                    ?>" required placeholder="Introduzca el titulo del articulo">
+                  <label for="comment">* Contenido:</label>
+                  <textarea class="form-control summernote" rows="5" name="Contenido_uno" required><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=1");?></textarea>
                 </div>
                 <div class="tab-pane fade" id="dos" role="tabpanel" aria-labelledby="Tab-Dos">
-                  <label for="usr">Título:</label>
+                  <label for="usr">* Título:</label>
                   <input type="text" class="form-control" name="Titulo_dos" value="<?php 
                       $conn = new conexion();
                       $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=2");
-                    ?>">
-                  <label for="comment">Contenido:</label>
-                  <textarea class="form-control summernote" rows="5" name="Contenido_dos"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=2");?>
-                  </textarea>
+                    ?>" required placeholder="Introduzca el titulo del articulo">
+                  <label for="comment">* Contenido:</label>
+                  <textarea class="form-control summernote" rows="5" name="Contenido_dos" required><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=2");?></textarea>
                 </div>
                 <div class="tab-pane fade" id="tres" role="tabpanel" aria-labelledby="Tab-Tres">
-                  <label for="usr">Título:</label>
+                  <label for="usr">* Título:</label>
                   <input type="text" class="form-control" name="Titulo_tres" value="<?php 
                       $conn = new conexion();
                       $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=3");
-                    ?>">
-                  <label for="comment">Contenido:</label>
-                  <textarea class="form-control summernote" rows="5" name="Contenido_tres"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=3");?>
-                  </textarea>
+                    ?>" required placeholder="Introduzca el titulo del articulo">
+                  <label for="comment">* Contenido:</label>
+                  <textarea class="form-control summernote" rows="5" name="Contenido_tres" required><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=3");?></textarea>
                 </div>
                 <div class="tab-pane fade" id="cuatro" role="tabpanel" aria-labelledby="Tab-Cuatro">
-                  <label for="usr">Título:</label>
+                  <label for="usr">* Título:</label>
                   <input type="text" class="form-control" name="Titulo_cuatro" value="<?php 
                       $conn = new conexion();
                       $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=4");
-                    ?>">
-                  <label for="comment">Contenido:</label>
-                  <textarea class="form-control summernote" rows="5" name="Contenido_cuatro"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=4");?>
-                  </textarea>
+                    ?>" required placeholder="Introduzca el titulo del articulo">
+                  <label for="comment">* Contenido:</label>
+                  <textarea class="form-control summernote" rows="5" name="Contenido_cuatro" required><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=4");?></textarea>
                 </div>
                 <div class="tab-pane fade" id="cinco" role="tabpanel" aria-labelledby="Tab-Cinco">
-                  <label for="usr">Título:</label>
+                  <label for="usr">* Título:</label>
                   <input type="text" class="form-control" name="Titulo_cinco" value="<?php 
                       $conn = new conexion();
                       $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=5");
-                    ?>">
-                  <label for="comment">Contenido:</label>
-                  <textarea class="form-control summernote" rows="5" name="Contenido_cinco"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=5");?>
-                  </textarea>
+                    ?>" required placeholder="Introduzca el titulo del articulo">
+                  <label for="comment">* Contenido:</label>
+                  <textarea class="form-control summernote" rows="5" name="Contenido_cinco" required><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=5");?></textarea>
                 </div>
+                <small class="form-text text-muted">
+                    Los campos marcados con * son obligatorios.
+                </small>
               </div>
               <br>
               
@@ -167,10 +166,85 @@
             </div>
           </div>
         </form>
+      <!-- Divisor de modulo - Formulario de Inicio/Servicios -->
+      <div class="dropdown-divider"></div>
       </div>
 
-      <!-- Divisor de modulo - Formulario de Galería-->
+      <!-- Formulario de servicios -->
+      <div class="collapse" id="Servicios">
+        <form action="./php/update_servicio.php" method="POST">
+          <div class="form-group">
+            <div class="w1-container container-fluid form-group">
+              <h2>Contenido para el sitio de servicios</h2>
+              
+              <!-- Contenedor que hace llamadas a las pestañas de navegación -->
+              <br>
+              <ul class="nav nav-pills nav-justified" id="TabInicio" role="tablist" name="Tab_Servicios">
+                <li class="nav-item" value="1">
+                  <a class="nav-link active colorpill w3-mobile" id="Tab-aplicacion" data-toggle="tab" href="#aplicacion" role="tab" aria-controls="aplicacion" aria-selected="true"><?php $conn = new conexion(); $conn->recuperarDatos("titulo_servicio", "contenido_servicio", "id_cont_servicio=1"); ?></a>
+                </li>
+                <li class="nav-item w3-mobile" value="2">
+                  <a class="nav-link" id="Tab-cursos" data-toggle="tab" href="#cursos" role="tab" aria-controls="cursos" aria-selected="false"><?php $conn=new conexion(); $conn->recuperarDatos("titulo_servicio", "contenido_servicio", "id_cont_servicio=2"); ?></a>
+                </li>
+              </ul>
+
+              <!-- Contenido de las pestañas de navegación -->
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="aplicacion" role="tabpanel" aria-labelledby="Tab-aplicacion">
+                  <label for="usr">* Título:</label>
+                  <input type="text" class="form-control" name="Titulo_uno" value="<?php 
+                      $conn = new conexion();
+                      $conn->recuperarDatos("titulo_servicio", "contenido_servicio", "id_cont_servicio=1");
+                    ?>" required placeholder="Introduzca el titulo del articulo">
+                  <label for="comment">* Contenido:</label>
+                  <textarea class="form-control summernote" rows="5" name="Contenido_uno" required><?php $cont=new conexion(); $cont->recuperarDatos("contenido_servicio", "contenido_servicio", "id_cont_servicio=1");?></textarea>
+                </div>
+                <div class="tab-pane fade" id="cursos" role="tabpanel" aria-labelledby="Tab-cursos">
+                  <label for="usr">* Título:</label>
+                  <input type="text" class="form-control" name="Titulo_dos" value="<?php 
+                      $conn = new conexion();
+                      $conn->recuperarDatos("titulo_servicio", "contenido_servicio", "id_cont_servicio=2");
+                    ?>" required placeholder="Introduzca el titulo del articulo">
+                  <label for="comment">* Contenido:</label>
+                  <textarea class="form-control summernote" rows="5" name="Contenido_dos" required><?php $cont=new conexion(); $cont->recuperarDatos("contenido_servicio", "contenido_servicio", "id_cont_servicio=2");?></textarea>
+                </div>
+                <small class="form-text text-muted">
+                    Los campos marcados con * son obligatorios.
+                </small>
+              </div>
+              <br>
+              
+              <!-- Boton que activa la alerta de confirmacion para guardar -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#guardarServicios">Guardar cambios</button>
+              
+              <!-- Modal para guardar -->
+              <div class="modal fade" id="guardarServicios" tabindex="-1" role="dialog" aria-labelledby="guardarServiciosLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="guardarServiciosLabel">Advertencia</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      Esta a punto de alterar el contenido de este parrafo, ¿Desea continuar?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                      <input type="submit" class="btn btn-primary" name="Guardar_Servicios" value="Guardar cambios">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <br>
+            </div>
+          </div>
+        </form>
+      <!-- Divisor de modulo - Formulario de Servicios/Galería -->
       <div class="dropdown-divider"></div>
+      </div>
 
       <!-- Formulario de galería -->
       <div class="collapse" id="Galeria">
@@ -183,33 +257,50 @@
               <!-- Contenedor que hace llamadas a las pestañas de navegación -->
               <br>
               <ul class="nav nav-pills nav-justified" id="TabInicio" role="tablist" name="Tab_Subir">
-                <li class="nav-item" value="1">
+                <li class="nav-item w3-mobile" value="1">
                   <a class="nav-link active w3-mobile" id="Gal-uno" data-toggle="tab" href="#G-uno" role="tab" aria-controls="G-uno" aria-selected="true">Subir imágenes</a>
                 </li>
                 <li class="nav-item w3-mobile" value="2">
-                  <a class="nav-link" id="Gal-Dos" data-toggle="tab" href="#G-dos" role="tab" aria-controls="G-dos" aria-selected="false">Eliminar imágenes</a>
+                  <a class="nav-link w3-mobile" id="Gal-dos" data-toggle="tab" href="#G-dos" role="tab" aria-controls="G-dos" aria-selected="false">Editar imágenes</a>
+                </li>
+                <li class="nav-item w3-mobile" value="3">
+                  <a class="nav-link w3-mobile" id="Gal-tres" data-toggle="tab" href="#G-tres" role="tab" aria-controls="G-tres" aria-selected="false">Eliminar imágenes</a>
                 </li>
               </ul>
 
               <!-- Contenido de las pestañas de navegación -->
               <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="G-uno" role="tabpanel" aria-labelledby="Gal-Uno">
-                <div class="mb-3 col-md-4">
-                  <div>
-                    <br>
-                    <label>Introduzca un nombre para la imagen:</label>
-                    <input type="text" class="form-control" name="Titulo_imagen">
-                    <input type="hidden" name="carpeta" value="gallery/">
-                    <br>
-                    <label>Seleccione Imagen:</label>
-                    <input type="file" class="form-control-file" name="exa_imagen" id="exampleFormControlFile1" accept=".png, .jpg, .jpeg, .PNG, .JPEG, .JPG" multiple="true" value="gallery" required>
-                    <small class="form-text text-muted">
-                          Formato de archivos admitidos: .png, .jpg o .jpeg
-                    </small>
+                <div class="tab-pane fade show active" id="G-uno" role="tabpanel" aria-labelledby="Gal-uno">
+                  <div class="mb-3 col-md-4">
+                    <div>
+                      <br>
+                      <label>Introduzca un nombre para la imagen:</label>
+                      <input type="text" class="form-control" name="Titulo_imagen">
+                      <input type="hidden" name="carpeta" value="gallery/">
+                      <br>
+                      <label>Seleccione Imagen:</label>
+                      <input type="file" class="form-control-file" name="exa_imagen" id="exampleFormControlFile1" accept=".png, .jpg, .jpeg, .PNG, .JPEG, .JPG" multiple="true" value="gallery" required>
+                      <small class="form-text text-muted">
+                            Formato de archivos admitidos: .png, .jpg o .jpeg
+                      </small>
+                    </div>
                   </div>
                 </div>
-                </div>
                 <div class="tab-pane fade" id="G-dos" role="tabpanel" aria-labelledby="Gal-Dos">
+                  <div class="mb-3 col-md-4">
+                    <div>
+                      <br>
+                      <label>Introduzca un nombre para la imagen:</label>
+                      <input type="text" class="form-control" name="Titulo_imagen">
+                      <input type="hidden" name="carpeta" value="gallery/">
+                      <br>
+                      <label>Seleccione Imagen:</label>
+                      <input type="file" class="form-control-file" name="exa_imagen" id="exampleFormControlFile1" accept=".png, .jpg, .jpeg, .PNG, .JPEG, .JPG" multiple="true" value="gallery" required>
+                      <small class="form-text text-muted">
+                            Formato de archivos admitidos: .png, .jpg o .jpeg
+                      </small>
+                    </div>
+                  </div>
                 </div>
               </div>
               <br>
@@ -242,6 +333,8 @@
             </div>
           </div>
         </form>
+      <!-- Divisor de modulo - Formulario de Galería/Citas -->
+      <div class="dropdown-divider"></div>
       </div>
 
 
@@ -264,7 +357,7 @@
   <!-- Editor de texto de summer note -->
   <script>
   $('.summernote').summernote({
-    placeholder: 'Introduzca su informacion aqui',
+    placeholder: 'Introduzca información aqui',
     tabsize: 2,
     height: 200,
     disableDragAndDrop: true,
@@ -279,7 +372,7 @@
     ['undo-redo', ['undo', 'redo']],
     ],
     lang: "es-ES",
-    fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18', '24', '36']
+    fontSizes: ['12', '14', '16', '18', '24', '36']
   });
   $(document).ready(function() {
     $('#summernote').summernote({

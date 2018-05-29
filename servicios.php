@@ -54,13 +54,30 @@
   <section class="w2-container container-fluid" id="contrainer_bg">
     <article>
 	    <!-- Galeria para la aplicacion -->
-    	<h2 style="text-align: center;">Aplicación</h2>
-	    <div class="fotorama centrar" data-allowfullscreen="true" data-width="100%" data-ratio="1366/768" data-loop="true" data-keyboard="true" data-nav="thumbs" data-arrows="true"><?php include ("./php/traer_galeria.php"); recuperarImagenes("curso");?></div>
-  		<!-- separador para separar los servicios -->
-  		<div class="dropdown-divider"></div>
+	    <!-- Titulo del apartado de Aplicacion -->
+    	<h2 style="text-align: center;"><?php include ("./php/consultas.php"); $conn = new conexion(); $conn->recuperarDatos("titulo_servicio", "contenido_servicio", "id_cont_servicio=1"); ?></h2>
+    	<!-- Galeria del apartado Aplicacion -->
+	    <div class="fotorama centrar" data-allowfullscreen="true" data-width="100%" data-ratio="1366/768" data-loop="true" data-keyboard="true" data-nav="thumbs" data-arrows="true"><?php include ("./php/traer_imagenes.php"); recuperarImagenes("aplicacion");?></div>
+        <!-- Contenedor de la descripción para el apartado de Aplicacion -->
+        <div class="w4-container container-fluid" style="background-color: #e2e5ec;">
+          <br>
+          <!-- Contenido del apartado Servicios/Aplicacion-->
+          <p class="p"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_servicio", "contenido_servicio", "id_cont_servicio=1"); ?></p>
+          <!-- Separador  -->
+          <div class="dropdown-divider"></div>
+        </div>
   		<!-- Galeria para los cursos  -->
-    	<h2 style="text-align: center;">Cursos</h2>
-	    <div class="fotorama centrar" data-allowfullscreen="true" data-width="100%" data-ratio="1366/768" data-loop="true" data-keyboard="true" data-nav="thumbs" data-arrows="true"><?php recuperarImagenes("aplicacion");?></div>
+	    <!-- Titulo del apartado de Aplicacion -->
+    	<h2 style="text-align: center;"><?php $conn = new conexion(); $conn->recuperarDatos("titulo_servicio", "contenido_servicio", "id_cont_servicio=2"); ?></h2>
+    	<!-- Galeria del apartado Cursos -->
+	    <div class="fotorama centrar" data-allowfullscreen="true" data-width="100%" data-ratio="1366/768" data-loop="true" data-keyboard="true" data-nav="thumbs" data-arrows="true"><?php recuperarImagenes("curso");?></div>
+        <!-- Contenedor de la descripción para el apartado de Cursos -->
+        <div class="w4-container container-fluid" style="background-color: #e2e5ec;">
+          <br>
+          <!-- Contenido del apartado Servicios/Cursos-->
+          <p class="p"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_servicio", "contenido_servicio", "id_cont_servicio=2"); ?></p>
+        </div>
+	    <br>
     </article>
   </section>
   <!-- Sección de pie de pagina -->
