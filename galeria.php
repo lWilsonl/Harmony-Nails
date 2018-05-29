@@ -54,7 +54,7 @@
   <section class="w2-container container-fluid" id="contrainer_bg">
     <article>
     	<h2 style="text-align: center;">Galería</h2>
-	    <div class="fotorama centrar" data-allowfullscreen="true" data-width="100%" data-ratio="1366/768" data-loop="true" data-keyboard="true" data-nav="thumbs" data-arrows="true"><?php include ("./php/traer_imagenes.php"); recuperarImagenes("gallery");?></div>
+	    <div class="fotorama centrar" data-allowfullscreen="true" data-width="100%" data-ratio="1366/768" data-loop="true" data-keyboard="true" data-nav="thumbs" data-arrows="true"><?php include ("./php/consultas.php");?><?php include ("./php/traer_imagenes.php"); recuperarImagenes("gallery");?></div>
     </article>
     <br>
   </section>

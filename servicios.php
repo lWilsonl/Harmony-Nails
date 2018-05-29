@@ -76,6 +76,8 @@
           <br>
           <!-- Contenido del apartado Servicios/Cursos-->
           <p class="p"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_servicio", "contenido_servicio", "id_cont_servicio=2"); ?></p>
+          <!-- Separador  -->
+          <div class="dropdown-divider"></div>
         </div>
 	    <br>
     </article>

@@ -2,8 +2,8 @@
 -- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost:3306
--- Tiempo de generación: 11-05-2018 a las 03:37:40
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 29-05-2018 a las 19:37:29
 -- Versión del servidor: 10.1.31-MariaDB
 -- Versión de PHP: 7.2.4
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 
 --
 -- Base de datos: `harmonynails`
-CREATE DATABASE IF NOT EXISTS harmonyn_db;
-use harmonyn_db;
 --
 
 -- --------------------------------------------------------
@@ -43,11 +41,11 @@ CREATE TABLE `contenido_inicio` (
 --
 
 INSERT INTO `contenido_inicio` (`id_cont_inicio`, `titulo_inicio`, `contenido_inicio`, `ultima_modif`, `id_usuario_FK`) VALUES
-(1, 'gege', 'Harmony Nails surge a principios de aÃ±o 2017, con el deseo de cubrir una necesidad existente en el Ã¡rea de belleza y a la par, cubrir las necesidades financieras propias. Mediante los productos y servicios busca consolidarse como una de las mejores en el mercado local.            ', '2018-05-09 02:10:47', 1),
-(2, 'Ventajas que ofrece Harmony Nails', '- Durabilidad de las uÃ±as\r\n<br>\r\n- Menores tiempos de aplicaciÃ³n\r\n<br>\r\n- Calidad en los materiales\r\n<br>\r\n- FÃ¡cil localizaciÃ³n\r\n<br>\r\n- Accesible ', '2018-05-04 02:26:50', 1),
-(3, 'Servicios que ofrecemos', '- AplicaciÃ³n de uÃ±as acrÃ­licas en manos\r\n<br>\r\n- Cursos para aplicaciÃ³n de uÃ±as     ', '2018-05-04 02:29:19', 1),
-(4, 'MisiÃ³n', 'Harmony Nails es una microempresa dedicada al diseÃ±o y aplicaciÃ³n de uÃ±as acrÃ­licas, nuestro principal interÃ©s es satisfacer las necesidades de nuestros clientes con una amplia gama de diseÃ±os que elaboramos profesionalmente, para ofrecer un servicio  de excelente calidad.', '2018-05-04 02:30:00', 1),
-(5, 'Vision', 'Harmony Nails surge a principios de aÃ±o 2017, con el deseo de cubrir una necesidad existente en el Ã¡rea de belleza y a la par, cubrir las necesidades financieras propias. Mediante los productos y servicios busca consolidarse como una de las mejores en el mercado local.', '2018-05-04 05:18:02', 1);
+(1, 'Historia', '<br>', '2018-05-29 17:18:04', 1),
+(2, 'Ventajas que ofrece Harmony Nails', '<span style=\"font-size: 18px;\">- Durabilidad de las uÃ±as\r\n</span><br><span style=\"font-size: 18px;\">\r\n- Menores tiempos de aplicaciÃ³n\r\n</span><br><span style=\"font-size: 18px;\">\r\n- Calidad en los materiales\r\n</span><br><span style=\"font-size: 18px;\">\r\n- FÃ¡cil localizaciÃ³n\r\n</span><br><span style=\"font-size: 18px;\">\r\n- Accesible</span>                                                                                                                                                                                                                                                                                                                  ', '2018-05-17 14:40:48', 1),
+(3, 'Servicios que ofrecemos', '<span style=\"font-size: 18px;\">- AplicaciÃ³n de uÃ±as acrÃ­licas en manos\r\n</span><br><span style=\"font-size: 18px;\">\r\n- Cursos para aplicaciÃ³n de uÃ±as</span>                                                                                                                                                                                                                                                                                                                  ', '2018-05-17 14:40:48', 1),
+(4, 'MisiÃ³n', '<span style=\"font-size: 18px;\">Harmony Nails es una microempresa dedicada al diseÃ±o y aplicaciÃ³n de uÃ±as acrÃ­licas, nuestro principal interÃ©s es satisfacer las necesidades de nuestros clientes con una amplia gama de diseÃ±os que elaboramos profesionalmente, para ofrecer un servicio  de excelente calidad.</span>                                                                                                                                                                                                                                                                                                                  ', '2018-05-17 14:40:48', 1),
+(5, 'VisiÃ³n', '<span style=\"font-size: 18px;\">Harmony Nails es una microempresa que en un futuro desea poder expandirse y de esta manera, poder contribuir a la economÃ­a local ademÃ¡s de lograr llegar a mÃ¡s personas para que nuestro trabajo sea reconocido para convertirnos en una empresa lÃ­der en el Ã¡rea y en el mercado local.</span>                                                                                                                                                                                                                                                                                                                   ', '2018-05-17 14:40:48', 1);
 
 -- --------------------------------------------------------
 
@@ -68,9 +66,33 @@ CREATE TABLE `contenido_servicio` (
 --
 
 INSERT INTO `contenido_servicio` (`id_cont_servicio`, `titulo_servicio`, `contenido_servicio`, `ultima_modif`, `id_usuario_FK`) VALUES
-(1, 'Adamop', 'Adamopa12', '2018-05-04 00:33:46', 1),
-(2, 'Adamop', 'Adamopa12', '2018-05-04 00:33:46', 1),
-(3, 'Adamop', 'Adamopa12', '2018-05-04 00:33:46', 1);
+(1, 'AplicaciÃ³n', '<span style=\"font-size: 18px;\">VisÃ­tanos y luce unas hermosas uÃ±as solo como en Harmony Nails sabemos hacerlas, con nuestro caracteristico ambiente amigable y ademas a un excelente precio.</span>', '2018-05-29 03:12:36', 1),
+(2, 'Cursos', '<span style=\"font-size: 18px;\">Si gustas aprender a hacer tus propios diseÃ±os, Harmony Nails ofrece cursos para que puedas aprender a realizar los mejores diseÃ±os. Contamos con personal capacitado que imparte cursos de aplicaciÃ³n de manera profesional.</span>', '2018-05-29 03:12:46', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `galeria_ubicaciones`
+--
+
+CREATE TABLE `galeria_ubicaciones` (
+  `id_imagen` int(3) UNSIGNED NOT NULL,
+  `nombre_imagen` varchar(80) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `descrip` text COLLATE utf8mb4_spanish_ci NOT NULL,
+  `cat_img` text COLLATE utf8mb4_spanish_ci NOT NULL,
+  `ruta_imagen` varchar(120) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `ultima_modif` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `id_usuario_FK` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `galeria_ubicaciones`
+--
+
+INSERT INTO `galeria_ubicaciones` (`id_imagen`, `nombre_imagen`, `descrip`, `cat_img`, `ruta_imagen`, `ultima_modif`, `id_usuario_FK`) VALUES
+(14, 'Imagen 1', 'Esta es la imagen numero uno', 'gallery', 'C:/practica/Harmony-Nails/images/gallery/Imagen 1.jpg', '2018-05-29 13:28:32', 0),
+(15, 'Imagen 2', 'Esta es la imagen numero dos', 'gallery', 'C:/practica/Harmony-Nails/images/gallery/Imagen 2.jpg', '2018-05-29 14:17:52', 0),
+(16, 'Imagen 3', 'Esta es la imagen numero 3', 'gallery', 'C:/practica/Harmony-Nails/images/gallery/Imagen 3.jpg', '2018-05-29 14:56:04', 0);
 
 -- --------------------------------------------------------
 
@@ -100,7 +122,6 @@ INSERT INTO `usuario_nails` (`id_usuario`, `user`, `password`) VALUES
 --
 ALTER TABLE `contenido_inicio`
   ADD PRIMARY KEY (`id_cont_inicio`),
-  ADD UNIQUE KEY `id_cont_inicio` (`id_cont_inicio`),
   ADD KEY `id_usuario_FK` (`id_usuario_FK`);
 
 --
@@ -108,6 +129,14 @@ ALTER TABLE `contenido_inicio`
 --
 ALTER TABLE `contenido_servicio`
   ADD PRIMARY KEY (`id_cont_servicio`);
+
+--
+-- Indices de la tabla `galeria_ubicaciones`
+--
+ALTER TABLE `galeria_ubicaciones`
+  ADD PRIMARY KEY (`id_imagen`),
+  ADD UNIQUE KEY `nombre_imagen` (`nombre_imagen`),
+  ADD KEY `id_usuario_FK` (`id_usuario_FK`);
 
 --
 -- Indices de la tabla `usuario_nails`
@@ -133,6 +162,12 @@ ALTER TABLE `contenido_inicio`
 --
 ALTER TABLE `contenido_servicio`
   MODIFY `id_cont_servicio` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `galeria_ubicaciones`
+--
+ALTER TABLE `galeria_ubicaciones`
+  MODIFY `id_imagen` int(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario_nails`

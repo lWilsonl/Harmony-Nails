@@ -10,7 +10,7 @@
 		  		$extension = strtolower(pathinfo($archivo ,PATHINFO_EXTENSION));
 		  		if($extension=='jpg' || $extension =='png' || $extension == 'JPG' || $extension == 'PNG' || $extension == 'jpeg' || $extension == 'JPEG') {
 		  			?>
-		        	<img src='<?php echo $dir_archivo; ?>'/><br>
+		        	<img src='<?php echo $dir_archivo; ?>' data-caption="<?php $conn = new conexion(); $conn->recuperarDatos("descrip", "galeria_ubicaciones", "ruta_imagen LIKE '%".$archivo."%'"); ?>"/><br>
 		            <?php
 		  		}
 		 	}	
