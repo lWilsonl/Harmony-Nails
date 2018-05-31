@@ -6,29 +6,34 @@
     if (!$conexion) {
         die("Fallo la conexion a la base de datos" . mysqli_connect_error());
     }
-
-    //Trae la carpeta en la que se subira la imagen    
-    $carpeta = $_POST["carpeta"];
-    //Establece la ruta en la que se subira la imagen, tomando la direccion raiz
-    $ruta=$_SERVER['DOCUMENT_ROOT']."/images/".$carpeta."/";
+    include "valida_imagenes.php";
+    $vali = new Validacion();
+    $result= $vali->validaImagen();
     //Obtiene la extension de la imagen
     $extension = pathinfo($_FILES["exa_imagen"]["name"], PATHINFO_EXTENSION);
-    //Trae el nombre de la imagen
-    $nombre = $_FILES["exa_imagen"]["name"]
-    //Treae la descripción de la imagen que va a asignar el usuario a la imagen a subir
-    $descrip = $_POST["Descrip_imagen"];
-    //Concatenacion de la ruta en la que se subira el archivo
-    $archivo_n=$ruta.$nombre.".".$extension;
-    
-    //Sube el archivo a la carpeta correspondientes
-    move_uploaded_file($_FILES["exa_imagen"]["tmp_name"], $archivo_n);
+    if($extension=='jpg' || $extension =='png' || $extension == 'JPG' || $extension == 'PNG' || $extension == 'jpeg' || $extension == 'JPEG') {
+        //Trae la carpeta en la que se subira la imagen    
+        $carpeta = $_POST["carpeta"];
+        //Establece la ruta en la que se subira la imagen, tomando la direccion raiz
+        $ruta=$_SERVER['DOCUMENT_ROOT']."/images/".$carpeta."/";
+        //Trae el nombre de la imagen
+        $nombre = $_FILES["exa_imagen"]["name"];
+        //Treae la descripción de la imagen que va a asignar el usuario a la imagen a subir
+        $descrip = $_POST["Descrip_imagen"];
+        //Concatenacion de la ruta en la que se subira el archivo
+        $archivo_n=$ruta.$nombre.".".$extension;
+        //Sube el archivo a la carpeta correspondiente
+        move_uploaded_file($_FILES["exa_imagen"]["tmp_name"], $archivo_n);
 
-    // Formulación de los querys a ejecutar una vez se llama a este php, despues de realizar la conexión
-    $query="INSERT INTO galeria_ubicaciones(nombre_imagen, descrip, cat_img, ruta_imagen) VALUES('".$nombre."','".$descrip."','".$carpeta."','".$archivo_n."')";
+        // Formulación de los querys a ejecutar una vez se llama a este php, despues de realizar la conexión
+        $query="INSERT INTO galeria_ubicaciones(nombre_imagen, descrip, cat_img, ruta_imagen) VALUES('".$nombre."','".$descrip."','".$carpeta."','".$archivo_n."')";
 
-    // Ejecución de los antes mencionados querys
-    $insert = mysqli_query($conexion, $query) or die ('No se pudo subir la imagen '.$query.'Error: '.mysqli_error($conexion));
-
+        // Ejecución de los antes mencionados querys
+        $insert = mysqli_query($conexion, $query) or die ('No se pudo subir la imagen '.$query.'Error: '.mysqli_error($conexion));
+    }
+    else{
+        echo "El archivo que seleccionó no es una imagen, por favor, utilice los tipos de imagenes admitidos."; 
+    }
     mysqli_close($conexion);
     header("Location: ../cpanel.php");
 ?>

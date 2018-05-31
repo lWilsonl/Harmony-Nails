@@ -5,7 +5,7 @@ class connect{
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "harmonynails";
+        $dbname = "harmonyn_db";
         $conexion= mysqli_connect($servername, $username, $password, $dbname) or die ("Falló la conexión a la base de datos.Error: ");
         return $conexion;
     }

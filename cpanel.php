@@ -47,7 +47,7 @@
               <button class="btn btn-primary btn-lg w3-mobile" style="width: 100%" type="button" data-toggle="collapse" data-target="#Galeria" aria-expanded="false" aria-controls="collapseExample">
               Galería
               </button>
-              <button class="btn btn-primary btn-lg w3-mobile" style="width: 100%" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+              <button class="btn btn-primary btn-lg w3-mobile" style="width: 100%" type="button" data-toggle="collapse" data-target="#Citas" aria-expanded="false" aria-controls="collapseExample">
               Citas
               </button>
               <button class="btn btn-primary btn-lg w3-mobile" style="width: 100%" type="button" data-toggle="collapse" data-target="#Contacto" aria-expanded="false" aria-controls="collapseExample">
@@ -132,7 +132,7 @@
                   <label for="comment">* Contenido:</label>
                   <textarea class="form-control summernote" rows="5" name="Contenido_cinco" required><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=5");?></textarea><span id="total-caracteres"></span>
                 </div>
-                <small class="form-text text-muted">Los campos marcados con * son obligatorios.</small>
+                <small class="form-text text-muted">Máximo 800 caracteres por artículo.</small>
                 <small class="form-text text-muted">Los campos marcados con * son obligatorios.</small>
               </div>
               <br>
@@ -276,13 +276,31 @@
                       <input type="hidden" name="carpeta" value="gallery">
                       <br>
                       <label>* Seleccione una imágen:</label>
-                      <input type="file" class="form-control-file" name="exa_imagen" id="exampleFormControlFile1" accept=".png, .jpg, .jpeg, .PNG, .JPEG, .JPG" multiple="true" value="gallery" required>
+                      <input type="file" class="form-control-file" name="exa_imagen" id="exampleFormControlFile1" accept=".png, .jpg, .jpeg, .PNG, .JPEG, .JPG" multiple="true" required>
                       <small class="form-text text-muted">Formato de imágenes admitidos: .png, .jpg o .jpeg</small>
                       <small class="form-text text-muted">Los campos marcados con * son obligatorios.</small>
                     </div>
                   </div>
                 </div>
                 <div class="tab-pane fade" id="G-dos" role="tabpanel" aria-labelledby="Gal-dos">
+                  <div class="mb-3 col-md-5">
+                    <div>
+                      <br>
+                      <label>*Seleccione una imagen a editar:</label>
+                      <select class="custom-select" id="imgOri">
+                        <option selected>Seleccione una imágen...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                      <br>
+                      <br>
+                      <img src="./img/img.png" class="img-thumbnail img-fluid" alt="Foto a modificar" style="margin: 10px; margin-bottom: 25px;">
+                      <div id="txtHint"><b>La imágen seleccionada se mostrará aquí</b></div>
+                      <br>
+                      <small class="form-text text-muted">Los campos marcados con * son obligatorios.</small>
+                    </div>
+                  </div>
                 </div>
               </div>
               <br>
@@ -319,6 +337,60 @@
       <div class="dropdown-divider"></div>
       </div>
 
+      <!-- Formulario de Citas -->
+      <div class="collapse" id="Citas">
+        <form>
+          <div class="form-group">
+            <div class="w1-container container-fluid form-group">
+              <h2>Citas registradas</h2>
+              
+              <!-- Contenedor que hace llamadas a las pestañas de navegación -->
+              <br>
+              <ul class="nav nav-pills nav-justified" id="TabInicio" role="tablist" name="Tab_Citas">
+                <li class="nav-item" value="1">
+                  <a class="nav-link active colorpill w3-mobile" id="Tab-aplicacion" data-toggle="tab" href="#aplicacion" role="tab" aria-controls="aplicacion" aria-selected="true">Citas de aplicación</a>
+                </li>
+                <li class="nav-item w3-mobile" value="2">
+                  <a class="nav-link" id="Tab-cursos" data-toggle="tab" href="#cursos" role="tab" aria-controls="cursos" aria-selected="false">Citas para cursos</a>
+                </li>
+              </ul>
+
+              <!-- Contenido de las pestañas de navegación -->
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="aplicacion" role="tabpanel" aria-labelledby="Tab-aplicacion">
+                <?php $clase = new connect(); $conexion=$clase->conectardb(); $mes=date('m'); ?>
+                <table class="table table-striped"> 
+                    <thead>
+                      <tr>
+                        <th>Nombre</th>
+                        <th>Número</th>
+                        <th>Fecha</th>    
+                      </tr>
+                    </thead>
+                  <?php foreach ($conexion->query("SELECT * from citas_aplica WHERE (substring(fecha,6,2)=$mes)") as $row){ // aca puedes hacer la consulta e iterarla con each. ?> 
+                    <tr>
+                      <td><?php echo $row['nombre'] // aca te faltaba poner los echo para que se muestre el valor de la variable.  ?></td>
+                        <td><?php echo $row['numero'] ?></td>
+                        <td><?php echo $row['fecha'] ?></td>
+                    </tr>
+                  <?php
+                    }
+                  ?>
+                </table>
+                </div>
+                <div class="tab-pane fade" id="cursos" role="tabpanel" aria-labelledby="Tab-cursos">
+
+                </div>
+              </div>
+              <br>
+              <br>
+            </div>
+          </div>
+        </form>
+      <!-- Divisor de modulo - Formulario de Citas/Contacto -->
+      <div class="dropdown-divider"></div>
+      </div>
+
       <!-- Formulario de Contacto -->
       <div class="collapse" id="Contacto">
         <form action="./php/update_contacto.php" method="POST">
@@ -346,21 +418,21 @@
                   <label for="usr">* URL de Facebook:</label>
                   <input type="URL" class="form-control" name="url_face" value="<?php 
                       $conn = new conexion();
-                      $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=1");
+                      $conn->recuperarDatos("ruta_contacto", "contacto_contenido", "id_contacto=1");
                     ?>" required placeholder="Introduzca la URL de Facebook">
                 </div>
                 <div class="tab-pane fade" id="insta" role="tabpanel" aria-labelledby="Tab-insta">
                   <label for="usr">* URL de Instagram:</label>
                   <input type="URL" class="form-control" name="url_insta" value="<?php 
                       $conn = new conexion();
-                      $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=2");
+                      $conn->recuperarDatos("ruta_contacto", "contacto_contenido", "id_contacto=2");
                     ?>" required placeholder="Introduzca la URL de Instagram">
                 </div>
                 <div class="tab-pane fade" id="what" role="tabpanel" aria-labelledby="Tab-what">
                   <label for="usr">* Número de contacto (WhatsApp):</label>
-                  <input type="text" class="form-control" name="num_what" value="<?php 
+                  <input type="number" class="form-control" name="num_what" value="<?php 
                       $conn = new conexion();
-                      $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=3");
+                      $conn->recuperarDatos("ruta_contacto", "contacto_contenido", "id_contacto=3");
                     ?>" required placeholder="Introduzca su número de celular (WhatsApp)" minlength="10" maxlength="15">
                 </div>
                 <small class="form-text text-muted">Los campos marcados con * son obligatorios.</small>
@@ -368,20 +440,20 @@
               <br>
               
               <!-- Boton que activa la alerta de confirmacion para guardar -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#guardarInicio">Guardar cambios</button>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#guardarContacto">Guardar cambios</button>
               
               <!-- Modal para guardar -->
-              <div class="modal fade" id="guardarInicio" tabindex="-1" role="dialog" aria-labelledby="guardarInicioLabel" aria-hidden="true">
+              <div class="modal fade" id="guardarContacto" tabindex="-1" role="dialog" aria-labelledby="guardarContactoLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="guardarInicioLabel">Advertencia</h5>
+                      <h5 class="modal-title" id="guardarContactoLabel">Advertencia</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
                     <div class="modal-body">
-                      Esta a punto de alterar el contenido de este parrafo, ¿Desea continuar?
+                      Esta a punto de modificar las URL, ¿Desea continuar?
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -395,7 +467,7 @@
             </div>
           </div>
         </form>
-      <!-- Divisor de modulo - Formulario de Inicio/Servicios -->
+      <!-- Divisor de modulo - Formulario final -->
       <div class="dropdown-divider"></div>
       </div>
 
@@ -456,19 +528,19 @@
           return false;
       }
   });
-
-
-  $('#myForm').on('submit', function(e) {
-  if($('#TextText').summernote('isEmpty')) {
-    console.log('No puede dejar el artículo vacío.');
-
-    // cancel submit
-    e.preventDefault();
+  function traer_imagen(){
+    var id_imagen = document.getElementById("imgOri").value;
+    var xhr;
+     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+        xhr = new XMLHttpRequest();
+    } else if (window.ActiveXObject) { // IE 8 y mas viejo
+        xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    var data = "id_imagen=" + id_imagen;
+       xhr.open("POST", "cargar_fotod.php", true); 
+         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");                  
+         xhr.send(data);
   }
-  else {
-    // do action
-  }
-})
   </script>
 </body>
 </html>

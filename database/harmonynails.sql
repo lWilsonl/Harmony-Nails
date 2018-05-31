@@ -21,7 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `harmonynails`
 --
-
+CREATE DATABASE IF NOT EXISTS harmonyn_db;
+use harmonyn_db;
 -- --------------------------------------------------------
 
 --

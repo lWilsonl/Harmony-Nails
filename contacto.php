@@ -59,9 +59,9 @@
       </picture>
       <br>
       <p class="p2">
-        <a href="https://www.facebook.com/Harmony-Nails-264255900645210/?ti=as" target="_blank"><img src="/images/faceb_logo.svg" class="logos_redes" alt="fb"></a>
-        <a href="https://www.instagram.com/fernandasoto79251/" target="_blank"><img src="/images/insta_logo.svg" class="logos_redes" alt="instagram"></a>
-        <a href="#" data-toggle="popover" data-trigger="focus" title="WhatsApp de Harmony Nails" data-placement="top" data-content="662 328 1593"><img src="/images/wp_logo.svg" class="logos_redes" alt="WhatsApp"></a></p>
+        <a href="<?php include ("./php/consultas.php"); $conn = new conexion(); $conn->recuperarDatos("ruta_contacto", "contacto_contenido", "id_contacto=1"); ?>" target="_blank"><img src="/images/faceb_logo.svg" class="logos_redes" alt="fb"></a>
+        <a href="<?php $conn = new conexion(); $conn->recuperarDatos("ruta_contacto", "contacto_contenido", "id_contacto=2"); ?>" target="_blank"><img src="/images/insta_logo.svg" class="logos_redes" alt="instagram"></a>
+        <a href="#" data-toggle="popover" data-trigger="focus" title="WhatsApp de Harmony Nails" data-placement="top" data-content="<?php $conn = new conexion(); $conn->recuperarDatos("ruta_contacto", "contacto_contenido", "id_contacto=3"); ?>"><img src="/images/wp_logo.svg" class="logos_redes" alt="WhatsApp"></a></p>
       <!-- Separador  -->
       <div class="dropdown-divider"></div>
       <!-- Espacio para serparar elementos  -->
