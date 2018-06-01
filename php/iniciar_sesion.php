@@ -14,7 +14,6 @@
     $sql = "SELECT * FROM usuario_nails WHERE (user='".$user."') AND (password='".$pass."')";
     $result = mysqli_query($conexion, $sql);
     $fila = mysqli_fetch_array($result);
-    echo "$fila[$dato]";
     
     if ($fila[$dato]=="") {
         header("Location: ../login.php");
@@ -22,4 +21,5 @@
     else{
         header("Location: ../cpanel.php");
     }
+    mysqli_close($conexion);
 ?>
