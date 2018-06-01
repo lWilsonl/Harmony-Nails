@@ -117,7 +117,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                  <input type="submit" class="btn btn-primary" name="Guardar_cita" value="Guardar cambios">
+                  <input type="submit" class="btn btn-primary" name="Guardar_cita" value="Agendar cita">
                 </div>
               </div>
             </div>

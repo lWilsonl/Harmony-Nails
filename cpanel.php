@@ -92,7 +92,7 @@
                   <input type="text" class="form-control" name="Titulo_uno" value="<?php 
                       $conn = new conexion();
                       $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=1");
-                    ?>" required placeholder="Introduzca el titulo del articulo" minlength="5" maxlength="30">
+                    ?>" required placeholder="Introduzca el titulo del articulo" minlength="5" maxlength="40">
                   <label for="comment">* Contenido:</label>
                   <textarea class="form-control summernote" rows="5" name="Contenido_uno"><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=1");?></textarea><span id="total-caracteres"></span>
                 </div>
@@ -101,7 +101,7 @@
                   <input type="text" class="form-control" name="Titulo_dos" value="<?php 
                       $conn = new conexion();
                       $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=2");
-                    ?>" required placeholder="Introduzca el titulo del articulo" minlength="5" maxlength="30">
+                    ?>" required placeholder="Introduzca el titulo del articulo" minlength="5" maxlength="40">
                   <label for="comment">* Contenido:</label>
                   <textarea class="form-control summernote" rows="5" name="Contenido_dos" required><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=2");?></textarea><span id="total-caracteres"></span>
                 </div>
@@ -110,7 +110,7 @@
                   <input type="text" class="form-control" name="Titulo_tres" value="<?php 
                       $conn = new conexion();
                       $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=3");
-                    ?>" required placeholder="Introduzca el titulo del articulo" minlength="5" maxlength="30">
+                    ?>" required placeholder="Introduzca el titulo del articulo" minlength="5" maxlength="40">
                   <label for="comment">* Contenido:</label>
                   <textarea class="form-control summernote" rows="5" name="Contenido_tres" required><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=3");?></textarea><span id="total-caracteres"></span>
                 </div>
@@ -119,7 +119,7 @@
                   <input type="text" class="form-control" name="Titulo_cuatro" value="<?php 
                       $conn = new conexion();
                       $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=4");
-                    ?>" required placeholder="Introduzca el titulo del articulo" minlength="5" maxlength="30">
+                    ?>" required placeholder="Introduzca el titulo del articulo" minlength="5" maxlength="40">
                   <label for="comment">* Contenido:</label>
                   <textarea class="form-control summernote" rows="5" name="Contenido_cuatro" required><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=4");?></textarea><span id="total-caracteres"></span>
                 </div>
@@ -128,7 +128,7 @@
                   <input type="text" class="form-control" name="Titulo_cinco" value="<?php 
                       $conn = new conexion();
                       $conn->recuperarDatos("titulo_inicio", "contenido_inicio", "id_cont_inicio=5");
-                    ?>" required placeholder="Introduzca el titulo del articulo" minlength="5" maxlength="30">
+                    ?>" required placeholder="Introduzca el titulo del articulo" minlength="5" maxlength="40">
                   <label for="comment">* Contenido:</label>
                   <textarea class="form-control summernote" rows="5" name="Contenido_cinco" required><?php $cont=new conexion(); $cont->recuperarDatos("contenido_inicio", "contenido_inicio", "id_cont_inicio=5");?></textarea><span id="total-caracteres"></span>
                 </div>
@@ -194,7 +194,7 @@
                   <input type="text" class="form-control" name="Titulo_uno" value="<?php 
                       $conn = new conexion();
                       $conn->recuperarDatos("titulo_servicio", "contenido_servicio", "id_cont_servicio=1");
-                    ?>" required placeholder="Introduzca el titulo del articulo" minlength="5" maxlength="30">
+                    ?>" required placeholder="Introduzca el titulo del articulo" minlength="5" maxlength="40">
                   <label for="comment">* Contenido:</label>
                   <textarea class="form-control summernote" rows="5" name="Contenido_uno" required><?php $cont=new conexion(); $cont->recuperarDatos("contenido_servicio", "contenido_servicio", "id_cont_servicio=1");?></textarea>
                 </div>
@@ -203,7 +203,7 @@
                   <input type="text" class="form-control" name="Titulo_dos" value="<?php 
                       $conn = new conexion();
                       $conn->recuperarDatos("titulo_servicio", "contenido_servicio", "id_cont_servicio=2");
-                    ?>" required placeholder="Introduzca el titulo del articulo" minlength="5" maxlength="30">
+                    ?>" required placeholder="Introduzca el titulo del articulo" minlength="5" maxlength="40">
                   <label for="comment">* Contenido:</label>
                   <textarea class="form-control summernote" rows="5" name="Contenido_dos" required><?php $cont=new conexion(); $cont->recuperarDatos("contenido_servicio", "contenido_servicio", "id_cont_servicio=2");?></textarea>
                 </div>
@@ -347,39 +347,57 @@
               <!-- Contenedor que hace llamadas a las pestañas de navegación -->
               <br>
               <ul class="nav nav-pills nav-justified" id="TabInicio" role="tablist" name="Tab_Citas">
-                <li class="nav-item" value="1">
-                  <a class="nav-link active colorpill w3-mobile" id="Tab-aplicacion" data-toggle="tab" href="#aplicacion" role="tab" aria-controls="aplicacion" aria-selected="true">Citas de aplicación</a>
+                <li class="nav-item w3-mobile" value="1">
+                  <a class="nav-link active colorpill w3-mobile" id="Tab-caplicacion" data-toggle="tab" href="#caplicacion" role="tab" aria-controls="caplicacion" aria-selected="true">Citas de aplicación</a>
                 </li>
                 <li class="nav-item w3-mobile" value="2">
-                  <a class="nav-link" id="Tab-cursos" data-toggle="tab" href="#cursos" role="tab" aria-controls="cursos" aria-selected="false">Citas para cursos</a>
+                  <a class="nav-link" id="Tab-ccursos" data-toggle="tab" href="#ccursos" role="tab" aria-controls="ccursos" aria-selected="false">Citas para cursos</a>
                 </li>
               </ul>
 
               <!-- Contenido de las pestañas de navegación -->
               <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="aplicacion" role="tabpanel" aria-labelledby="Tab-aplicacion">
-                <?php $clase = new connect(); $conexion=$clase->conectardb(); $mes=date('m'); ?>
-                <table class="table table-striped"> 
-                    <thead>
-                      <tr>
-                        <th>Nombre</th>
-                        <th>Número</th>
-                        <th>Fecha</th>    
-                      </tr>
-                    </thead>
-                  <?php foreach ($conexion->query("SELECT * from citas_aplica WHERE (substring(fecha,6,2)=$mes)") as $row){ // aca puedes hacer la consulta e iterarla con each. ?> 
-                    <tr>
-                      <td><?php echo $row['nombre'] // aca te faltaba poner los echo para que se muestre el valor de la variable.  ?></td>
-                        <td><?php echo $row['numero'] ?></td>
-                        <td><?php echo $row['fecha'] ?></td>
-                    </tr>
-                  <?php
-                    }
-                  ?>
-                </table>
+                <div class="tab-pane fade show active" id="caplicacion" role="tabpanel" aria-labelledby="Tab-caplicacion">
+                  <?php $clase = new connect(); $conexion=$clase->conectardb(); $mes=date('m'); $año=date('Y') ?>
+                    <table class="table table-striped"> 
+                        <thead>
+                          <tr>
+                            <th>Nombre</th>
+                            <th>Número</th>
+                            <th>Fecha</th>    
+                          </tr>
+                        </thead>
+                      <?php foreach ($conexion->query("SELECT * from citas_aplica WHERE (substring(fecha,6,2)=$mes) AND (substring(fecha,1,4)=$año)") as $row){ // aca puedes hacer la consulta e iterarla con each. ?> 
+                        <tr>
+                          <td><?php echo $row['nombre'] // aca te faltaba poner los echo para que se muestre el valor de la variable.  ?></td>
+                            <td><?php echo $row['numero'] ?></td>
+                            <td><?php echo $row['fecha'] ?></td>
+                        </tr>
+                      <?php
+                        }
+                      ?>
+                    </table>
                 </div>
-                <div class="tab-pane fade" id="cursos" role="tabpanel" aria-labelledby="Tab-cursos">
-
+                <div class="tab-pane fade" id="ccursos" role="tabpanel" aria-labelledby="Tab-ccursos">
+                  <?php $clase = new connect(); $conexion=$clase->conectardb(); $mes=date('m'); $año=date('Y') ?>
+                    <table class="table table-striped"> 
+                        <thead>
+                          <tr>
+                            <th>Nombre</th>
+                            <th>Número</th>
+                            <th>Fecha</th>    
+                          </tr>
+                        </thead>
+                      <?php foreach ($conexion->query("SELECT * from citas_cursos WHERE (substring(fecha,6,2)=$mes) AND (substring(fecha,1,4)=$año)") as $row){ // aca puedes hacer la consulta e iterarla con each. ?> 
+                        <tr>
+                          <td><?php echo $row['nombre'] // aca te faltaba poner los echo para que se muestre el valor de la variable.  ?></td>
+                            <td><?php echo $row['numero'] ?></td>
+                            <td><?php echo $row['fecha'] ?></td>
+                        </tr>
+                      <?php
+                        }
+                      ?>
+                    </table>
                 </div>
               </div>
               <br>

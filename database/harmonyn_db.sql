@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-05-2018 a las 20:25:33
+-- Tiempo de generación: 31-05-2018 a las 23:16:15
 -- Versión del servidor: 10.1.31-MariaDB
 -- Versión de PHP: 7.2.4
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `harmonyn_db`
 --
+CREATE DATABASE IF NOT EXISTS harmonyn_db;
+use harmonyn_db;
 
 -- --------------------------------------------------------
 
@@ -34,16 +36,6 @@ CREATE TABLE `citas_aplica` (
   `numero` text COLLATE utf8mb4_spanish_ci NOT NULL,
   `fecha` varchar(20) COLLATE utf8mb4_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
-
---
--- Volcado de datos para la tabla `citas_aplica`
---
-
-INSERT INTO `citas_aplica` (`id_cita_aplic`, `nombre`, `numero`, `fecha`) VALUES
-(9, 'Ana Paola', '6621234567', ''),
-(10, 'sdafasdfasdf', '1234123412341234', ''),
-(11, 'Paola Mirazo', '6621405180', '2020-06-21T00:12'),
-(12, 'Ramirez Palo', '6621458631', '2018-05-25T01:00');
 
 -- --------------------------------------------------------
 
@@ -99,11 +91,11 @@ CREATE TABLE `contenido_inicio` (
 --
 
 INSERT INTO `contenido_inicio` (`id_cont_inicio`, `titulo_inicio`, `contenido_inicio`, `ultima_modif`, `id_usuario_FK`) VALUES
-(1, '', '', '2018-05-31 06:40:36', 1),
-(2, '', '', '2018-05-31 06:40:37', 1),
-(3, '', '', '2018-05-31 06:40:37', 1),
-(4, '', '', '2018-05-31 06:40:37', 1),
-(5, '', '', '2018-05-31 06:40:37', 1);
+(1, 'Historia', '<p><span style=\"font-size: 18px;\">Harmony Nails surge a principios de aÃ±o 2017, con el deseo de cubrir una necesidad existente en el Ã¡rea de belleza y a la par, cubrir las necesidades financieras propias. Mediante los productos y servicios busca consolidarse como una de las mejores en el mercado local.</span><br></p>', '2018-05-31 21:07:11', 1),
+(2, 'Ventajas que ofrece Harmony Nails', '<p><span style=\"font-size: 18px;\">- Durabilidad de las uÃ±as </span></p><p><span style=\"font-size: 18px;\">- Menores tiempos de aplicaciÃ³n </span></p><p><span style=\"font-size: 18px;\">- Calidad en los materiales </span></p><p><span style=\"font-size: 18px;\">- FÃ¡cil localizaciÃ³n </span></p><p><span style=\"font-size: 18px;\">- Accesible</span><br></p>', '2018-05-31 21:11:55', 1),
+(3, 'Servicios que ofrecemos', '<p><span style=\"font-size: 18px;\">- AplicaciÃ³n de uÃ±as acrÃ­licas en manos</span></p><p><span style=\"font-size: 18px;\">- Cursos para aplicaciÃ³n de uÃ±as&nbsp;</span></p>', '2018-05-31 21:11:55', 1),
+(4, 'MisiÃ³n', '<p><span style=\"font-size: 18px;\">Harmony Nails es una microempresa dedicada al diseÃ±o y aplicaciÃ³n de uÃ±as acrÃ­licas, nuestro principal interÃ©s es satisfacer las necesidades de nuestros clientes con una amplia gama de diseÃ±os que elaboramos profesionalmente, para ofrecer un servicio de excelente calidad.</span><br></p>', '2018-05-31 21:11:55', 1),
+(5, 'Vision', '<p><span style=\"font-size: 18px;\">Harmony Nails es una micro empresa&nbsp;que en un futuro desea poder expandirse y de esta manera, poder contribuir a la economÃ­a local ademÃ¡s de lograr llegar a mÃ¡s personas para que nuestro trabajo sea reconocido para convertirnos en una empresa lÃ­der en el Ã¡rea y en el mercado local.</span><br></p>', '2018-05-31 21:11:55', 1);
 
 -- --------------------------------------------------------
 
@@ -234,13 +226,13 @@ ALTER TABLE `usuario_nails`
 -- AUTO_INCREMENT de la tabla `citas_aplica`
 --
 ALTER TABLE `citas_aplica`
-  MODIFY `id_cita_aplic` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_cita_aplic` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `citas_cursos`
 --
 ALTER TABLE `citas_cursos`
-  MODIFY `id_cita_curso` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_cita_curso` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `contacto_contenido`
